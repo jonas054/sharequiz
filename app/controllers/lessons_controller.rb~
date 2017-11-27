@@ -1,0 +1,216 @@
+class LessonsController < ApplicationController
+  helper :application
+  
+  # GET /lessons?[lang1=X][&lang2=Y][&created_by=Z][&title_match=W]
+  def index() filter_lessons end
+  
+  def show() @lesson = Lesson.find params[:id] end # GET /lessons/1
+  
+  # GET /lessons/new
+  def new
+    @lesson = Lesson.new
+    @languages = Language.all_for_select
+  end
+
+  # GET /lessons/1/edit
+  def edit
+    @lesson = Lesson.find params[:id]
+    @query_to_edit = Query.find params[:query_id] if params[:query_id]
+    @new_query = Query.new
+    @languages = Language.all_for_select
+    
+    @duplicates = []
+    all_queries = Query.find :all
+    @lesson.queries.each { |q|
+      q.possible(q.question).each { |word|
+        @duplicates += all_queries.find_all { |other|
+          next if other.lesson.nil?
+          other.lesson != q.lesson and q.has_same_languages_as(other) and other.answer_ok?(word, true)
+        }
+      }
+      q.possible(q.answer).each { |word|
+        @duplicates += all_queries.find_all { |other|
+          next if other.lesson.nil?
+          other.lesson != q.lesson and q.has_same_languages_as(other) and other.answer_ok?(word, false)
+        }
+      }
+    }
+    @duplicates.uniq!
+    logger.debug @duplicates
+  end
+
+  # POST /lessons
+  def create
+    @languages = Language.all_for_select
+    case params[:commit]
+    when text(:add)
+      q = Query.new params[:query]
+      q.lesson_id = params[:id]
+      q.save!
+      @lesson = Lesson.find params[:lesson_id]
+      @new_query = Query.new
+      render :action => "edit"
+    when text(:create)
+      params[:lesson][:user] = User.find(session[:user_id])
+      @lesson = Lesson.create params[:lesson]
+      if @lesson.save
+        redirect_to :action => "edit", :id => @lesson.id
+      else
+        render :action => "new"
+      end
+    end
+  end
+
+  def add_filter
+    redirect_with_filters
+  end
+
+  def redirect_with_filters
+    tm = params[:title_match] ||
+      (params[:filter] && params[:filter][:title_match])
+    if params[:filter].nil?
+      params[:filter] = {}
+      params.keys.each { |key| params[:filter][key] = params[key] }
+    end
+    cb = params[:filter][:created_by]
+    lang1 = params[:filter][:lang1] || params[:filter][:language]
+    if params[:filter][:lang1]
+      lang2 = params[:filter][:lang2] || params[:filter][:language]
+    end
+    sort = params[:filter][:sort]
+    redirect_to :action => "index", :lang1 => lang1, :lang2 => lang2, 
+      :created_by => cb, :title_match => tm, :sort => sort
+  end
+  
+  # GET /lessons/run
+  def run
+    filter_lessons
+    @query = choose_query
+    session[:questions_left] = User.find(session[:user_id]).quiz_length
+    session[:progress] = []
+  end
+
+  # GET /lessons/answer/1
+  def answer
+    filter_lessons
+    q = Query.find params[:id]
+    know = q.knowledge session[:user_id]
+    know.nr_of_answers += 1
+    reply = params[:query][session[:reversed] ? :question : :answer]
+    if q.answer_ok?(reply, session[:reversed])
+      know.nr_of_correct_answers += 1
+      know.time_for_last_correct_answer = Time.now
+      session[:questions_left] -= 1
+      session[:progress] << true
+    else
+      @correct_answer = if session[:reversed] then q.question else q.answer end
+      @last_question = if session[:reversed] then q.answer else q.question end
+      @last_lesson = q.lesson
+      @wrong_answer = reply
+      @clue = q.clue
+      session[:progress] << false
+    end
+    know.save!
+    if session[:questions_left] <= 0
+      end_quiz
+    else
+      @query = choose_query q
+      render :action => "run"
+    end
+  end
+
+  def end_quiz
+      session[:reversed] = !session[:reversed]
+      redirect_with_filters
+  end
+  
+  # PUT /lessons/1
+  def update
+    case params[:commit]
+    when text(:save_lesson)
+      @lesson = Lesson.find params[:id]
+      if @lesson.update_attributes params[:lesson]
+        redirect_to :controller => ""
+      else
+        render :action => "edit"
+      end
+    when text(:add)
+      q = Query.new params[:new_query]
+      q.lesson_id = params[:id]
+      q.save!
+      redirect_to :action => "edit", :id => params[:id]
+    when text(:save)
+      q = Query.find params[:query_id]
+      if q.update_attributes params[:query_to_edit]
+        Knowledge.delete_all "query_id = #{q.id}" # not relevant anymore
+      end
+      redirect_to :action => "edit", :id => params[:id]
+    else
+      raise "Unknown action #{params[:commit]} committed"
+    end
+  end
+
+  # DELETE /lessons/1
+  def destroy
+    @lesson = Lesson.find params[:id]
+    @lesson.destroy
+    redirect_to lessons_url
+  end
+
+  private
+
+  # Choose a query that the user has a relatively bad knowledge of, is not the
+  # same as the previous query, and has the same answer language as the previous.
+  def choose_query(previous = nil)
+    queries = @lessons.map { |ln| ln.queries }.flatten
+    sorted = queries.sort_by { |q| q.knowledge(session[:user_id]).score }
+    worst = sorted[0, sorted.length / 3 ]
+    scrambled = worst.sort_by { rand }
+    if previous
+      scrambled.find { |q|
+        q.id != previous.id and answer_lang_id(q) == answer_lang_id(previous)
+      }
+    else
+      scrambled.first
+    end or sorted.first
+  end
+
+  def answer_lang_id(query)
+    query.lesson.possibly_reversed_answer_lang(session[:reversed]).id
+  end
+  
+  def filter_lessons
+    @lang1 = params[:lang1].nil? ? nil : Language.find(params[:lang1].to_i)
+    @lang2 = params[:lang2].nil? ? nil : Language.find(params[:lang2].to_i)
+    @created_by = User.find_by_name params[:created_by] if params[:created_by]
+    @title_match = params[:title_match]
+    @sort = params[:sort]
+    @lessons = Lesson.find(:all).select { |lesson|
+      lang1_ok = @lang1.nil? || lesson.includes_language?(@lang1)
+      lang2_ok = @lang2.nil? || lesson.includes_language?(@lang2)
+      if @lang1 == @lang2
+        lang2_ok = @lang2.blank? ||
+          lang2_ok && lesson.question_lang_id == lesson.answer_lang_id
+      end
+      created_by_ok = @created_by.nil? || lesson.user == @created_by
+      title_match_ok = @title_match.blank? || lesson.name =~ /#{@title_match}/
+      lang1_ok and lang2_ok and created_by_ok and title_match_ok
+    }
+    if @sort
+      @lessons = @lessons.sort_by { |ln|
+        case @sort
+        when /name/ then ln.name
+        when /language/ then ln.question_lang.own_name
+        when /creator/ then ln.user.name
+        when /entries/ then ln.queries.size
+        when /score/ then ln.score(session[:user_id])
+        end
+      }
+      @lessons.reverse! if @sort =~ /^_/
+    end
+  end
+
+  def db_language_name(arg)
+    Language.find_by_own_name(params[:filter][arg]).english_name
+  end
+end

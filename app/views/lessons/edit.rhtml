@@ -1,0 +1,87 @@
+<br /> <!-- Needed for IE. Letters are cut otherwise. -->
+
+<table class="outer">
+  <tr>
+    <td class="navigation">
+      <table>
+        <%= button_row_for_edit %>
+      </table>
+    </td>
+    <td>
+
+<h1 align="center"> <%= text(:edit_lesson) %> </h1>
+
+<%= error_messages_for :lesson %>
+<% form_for(:lesson,
+            @lesson,
+            :url => { :action => "update", :id => @lesson.id }) do |f| %>
+  <table align="center">
+    <%= render :partial => 'lesson_head_form', :object => f %>
+    <tbody>
+      <% linetype = 'odd' %>
+      <% for query in @lesson.queries.sort_by { |q| q.created_at } do %>
+        <% linetype = linetype=='odd' ? 'even' : 'odd' %>
+        <% linetype = 'copy' if @orig_queries.include?(query.id) %>
+        <tr class="<%= linetype %>">
+          <% if query == @query_to_edit %>
+            <td></td>
+            <%= hidden_field_tag 'query_id', query.id %>
+            <%= query_fields :query_to_edit, :save %>
+          <% else %>
+            <td>
+              <%= buttons_for_edit_and_remove query %>
+              <% if has_chinese @lesson.question_lang_id, @lesson.answer_lang_id %>
+                <%= dictionary_links(@lesson.question_lang_id, @lesson.answer_lang_id,
+                                     query.question, query.answer) %>
+              <% end %>
+            </td>
+            <%= possibly_chinese_td @lesson.question_lang, query.question %>
+            <%= possibly_chinese_td @lesson.answer_lang,   query.answer %>
+           <td> <%= h query.clue %> </td>
+          <% end %>
+        </tr>
+      <% end %>
+                
+      <% unless @query_to_edit %>
+        <tr>
+        <td></td>
+        <%= query_fields :new_query, :add %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <p align="center"> <%= submit_tag text(:save_lesson) %> </p>
+<% end %>
+
+<% if @duplicates.any? %>
+  <h3 align="center"> <%= text(:similar_questions_in_other_lessons) %> </h3>
+  <table align="center" class="copy">
+    <% for query in @duplicates do %>
+      <tr>
+        <td>
+          <% if query.lesson && query.lesson.user_id == session[:user_id] %>
+            <%= link_to query.lesson.name,
+              { :controller => 'lessons', :action => 'edit', :id => query.lesson.id },
+              :title => text(:edit) %>
+          <% else %>
+            <%= h query.lesson ? query.lesson.name : "" %>
+          <% end %>
+        </td>
+        <%= possibly_chinese_td @lesson.question_lang, query.question %>
+        <%= possibly_chinese_td @lesson.answer_lang,   query.answer %>
+        <td> <%= h query.clue     %> </td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
+  </td>
+</table>
+
+<div class="guide">
+<%= text(:guide_for_edit) %>
+</div>
+
+<script type="text/javascript">
+  document.getElementById("new_query_question").focus()
+</script>

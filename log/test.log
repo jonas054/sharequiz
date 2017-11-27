@@ -1,0 +1,999 @@
+# Logfile created on Sat Jun 20 12:18:59 +0200 2009  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mKnowledge Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `knowledges`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mKnowledge Create (0.2ms)[0m   [0mINSERT INTO `knowledges` (`nr_of_correct_answers`, `updated_at`, `time_for_last_correct_answer`, `query_id`, `nr_of_answers`, `user_id`, `created_at`) VALUES(0, '2009-06-20 10:19:00', NULL, NULL, 0, NULL, '2009-06-20 10:19:00')[0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `lessons`[0m
+  [4;35;1mLesson Exists (0.2ms)[0m   [0mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` = BINARY 'Traffic') LIMIT 1[0m
+  [4;36;1mLesson Create (0.2ms)[0m   [0;1mINSERT INTO `lessons` (`name`, `answer_lang_id`, `updated_at`, `is_private`, `user_id`, `question_lang_id`, `created_at`) VALUES('Traffic', 2, '2009-06-20 10:19:00', 0, NULL, 1, '2009-06-20 10:19:00')[0m
+  [4;35;1mLesson Exists (0.2ms)[0m   [0mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` = BINARY 'Traffic') LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Exists (0.2ms)[0m   [0;1mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` IS NULL) LIMIT 1[0m
+  [4;35;1mLesson Exists (0.1ms)[0m   [0mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` IS NULL) LIMIT 1[0m
+  [4;36;1mLesson Exists (0.1ms)[0m   [0;1mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLesson Exists (0.2ms)[0m   [0mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` = BINARY 'Food and drink') LIMIT 1[0m
+  [4;36;1mLesson Create (0.2ms)[0m   [0;1mINSERT INTO `lessons` (`name`, `answer_lang_id`, `updated_at`, `is_private`, `user_id`, `question_lang_id`, `created_at`) VALUES('Food and drink', 2, '2009-06-20 10:19:00', 0, NULL, 1, '2009-06-20 10:19:00')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `queries`[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('(att) komma/återvända hem (igen)', '2009-06-20 10:19:00', NULL, NULL, 'blablabla', '2009-06-20 10:19:00')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Create (0.2ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('Häst', '2009-06-20 10:19:00', NULL, NULL, 'Horse', '2009-06-20 10:19:00')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.4ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('gå; (att) komma/återvända hem (igen)', '2009-06-20 10:19:00', NULL, NULL, 'blablabla', '2009-06-20 10:19:00')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Create (0.2ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('Jag arbetar/jobbar på universitet(et).', '2009-06-20 10:19:00', NULL, NULL, 'blablabla', '2009-06-20 10:19:00')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('天/日', '2009-06-20 10:19:00', NULL, NULL, 'blablabla', '2009-06-20 10:19:00')[0m
+  [4;35;1mQuery Create (0.2ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('时(间);时(候)', '2009-06-20 10:19:00', NULL, NULL, 'blablabla', '2009-06-20 10:19:00')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('sluta jobbet/jobba/arbetet/arbeta', '2009-06-20 10:19:00', NULL, NULL, 'blablabla', '2009-06-20 10:19:00')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Create (0.2ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('sluta (jobbet/jobba/arbetet/arbeta)', '2009-06-20 10:19:00', NULL, NULL, 'blablabla', '2009-06-20 10:19:00')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('kyckling(kött)', '2009-06-20 10:19:00', NULL, NULL, 'blablabla', '2009-06-20 10:19:00')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Create (0.1ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('sluta jobbet/jobba;sluta arbetet/arbeta', '2009-06-20 10:19:00', NULL, NULL, 'blablabla', '2009-06-20 10:19:00')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('gå; (att) komma/återvända hem (igen)', '2009-06-20 10:19:00', NULL, NULL, 'blablabla', '2009-06-20 10:19:00')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6122095580.306668890822313', '2009-06-20 10:19:00', 'f3e1e58e1bd8d11e436fa5177100bc0f93de3561', 5, NULL, '2009-06-20 10:19:00', NULL)[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'Unknown Guy') LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6122340080.727909472328867', '2009-06-20 10:19:00', '77a83f350e7849cd1d427df60d558720bf4e3eeb', 5, NULL, '2009-06-20 10:19:00', NULL)[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`name` = 'Jonas') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;35;1mUser Create (1.1ms)[0m   [0mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6122435280.936788455563798', '2009-06-20 10:19:00', '406ca7270cbb2fc8e6a836d53ccf66556ba6064a', 5, NULL, '2009-06-20 10:19:00', NULL)[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'Jonas') LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6122530680.265472702732321', '2009-06-20 10:19:00', '759f3716794b601421654670f0ed59b6f42c29df', 5, NULL, '2009-06-20 10:19:00', NULL)[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'New User') LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6122700580.91608275512088', '2009-06-20 10:19:00', '4056c92dd62538af1e5f6806a5036dfbbca32812', 5, NULL, '2009-06-20 10:19:00', NULL)[0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6122871280.389381797240737', '2009-06-20 10:19:00', '5223b1a9885a11e4f7aa47be728b77d4c6e0d66f', 5, NULL, '2009-06-20 10:19:00', NULL)[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mKnowledge Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `knowledges`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mKnowledge Create (0.2ms)[0m   [0mINSERT INTO `knowledges` (`nr_of_correct_answers`, `updated_at`, `time_for_last_correct_answer`, `query_id`, `nr_of_answers`, `user_id`, `created_at`) VALUES(0, '2009-06-20 10:48:00', NULL, NULL, 0, NULL, '2009-06-20 10:48:00')[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mLanguage Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `languages`[0m
+  [4;35;1mLanguage Create (0.2ms)[0m   [0mINSERT INTO `languages` (`own_name`, `english_name`) VALUES(NULL, NULL)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mLanguage Create (0.2ms)[0m   [0;1mINSERT INTO `languages` (`own_name`, `english_name`) VALUES('Svenska', 'Swedish')[0m
+  [4;35;1mLanguage Create (0.1ms)[0m   [0mINSERT INTO `languages` (`own_name`, `english_name`) VALUES('Svenska', 'Swedish')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `lessons`[0m
+  [4;35;1mLesson Exists (0.2ms)[0m   [0mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` = BINARY 'Traffic') LIMIT 1[0m
+  [4;36;1mLesson Create (0.2ms)[0m   [0;1mINSERT INTO `lessons` (`name`, `answer_lang_id`, `updated_at`, `is_private`, `user_id`, `question_lang_id`, `created_at`) VALUES('Traffic', 2, '2009-06-20 10:48:00', 0, NULL, 1, '2009-06-20 10:48:00')[0m
+  [4;35;1mLesson Exists (0.2ms)[0m   [0mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` = BINARY 'Traffic') LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Exists (0.2ms)[0m   [0;1mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` IS NULL) LIMIT 1[0m
+  [4;35;1mLesson Exists (0.1ms)[0m   [0mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` IS NULL) LIMIT 1[0m
+  [4;36;1mLesson Exists (0.1ms)[0m   [0;1mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLesson Exists (0.2ms)[0m   [0mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` = BINARY 'Food and drink') LIMIT 1[0m
+  [4;36;1mLesson Create (0.2ms)[0m   [0;1mINSERT INTO `lessons` (`name`, `answer_lang_id`, `updated_at`, `is_private`, `user_id`, `question_lang_id`, `created_at`) VALUES('Food and drink', 2, '2009-06-20 10:48:00', 0, NULL, 1, '2009-06-20 10:48:00')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `queries`[0m
+  [4;36;1mQuery Create (0.9ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('(att) komma/återvända hem (igen)', '2009-06-20 10:48:00', NULL, NULL, 'blablabla', '2009-06-20 10:48:00')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Create (0.2ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('Häst', '2009-06-20 10:48:00', NULL, NULL, 'Horse', '2009-06-20 10:48:00')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('gå; (att) komma/återvända hem (igen)', '2009-06-20 10:48:00', NULL, NULL, 'blablabla', '2009-06-20 10:48:00')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Create (0.2ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('Jag arbetar/jobbar på universitet(et).', '2009-06-20 10:48:00', NULL, NULL, 'blablabla', '2009-06-20 10:48:00')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('天/日', '2009-06-20 10:48:00', NULL, NULL, 'blablabla', '2009-06-20 10:48:00')[0m
+  [4;35;1mQuery Create (0.1ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('时(间);时(候)', '2009-06-20 10:48:00', NULL, NULL, 'blablabla', '2009-06-20 10:48:00')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('sluta jobbet/jobba/arbetet/arbeta', '2009-06-20 10:48:00', NULL, NULL, 'blablabla', '2009-06-20 10:48:00')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Create (0.1ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('sluta (jobbet/jobba/arbetet/arbeta)', '2009-06-20 10:48:00', NULL, NULL, 'blablabla', '2009-06-20 10:48:00')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('kyckling(kött)', '2009-06-20 10:48:00', NULL, NULL, 'blablabla', '2009-06-20 10:48:00')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Create (0.1ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('sluta jobbet/jobba;sluta arbetet/arbeta', '2009-06-20 10:48:00', NULL, NULL, 'blablabla', '2009-06-20 10:48:00')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('gå; (att) komma/återvända hem (igen)', '2009-06-20 10:48:00', NULL, NULL, 'blablabla', '2009-06-20 10:48:00')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Exists (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6119963580.282578344048091', '2009-06-20 10:48:00', '03e8ea186f4fefee1ea769e996418905ec53c734', 5, NULL, '2009-06-20 10:48:00', NULL)[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'Unknown Guy') LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6120208080.0955689914297174', '2009-06-20 10:48:00', 'c1a3841ebb638f228948466cacec84010f6a367f', 5, NULL, '2009-06-20 10:48:00', NULL)[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`name` = 'Jonas') LIMIT 1[0m
+  [4;36;1mSQL (13.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6120303280.66547998490996', '2009-06-20 10:48:00', '212348b522f768cee8216b38c4587a3b5a2e4eaa', 5, NULL, '2009-06-20 10:48:00', NULL)[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'Jonas') LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6120398680.979221201217442', '2009-06-20 10:48:00', 'e979c124b73ee209a83cf270e70ac9a5789e0795', 5, NULL, '2009-06-20 10:48:00', NULL)[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'New User') LIMIT 1[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Exists (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6120568580.859612544311672', '2009-06-20 10:48:00', 'b6ca67d1366c63b75acb2c3fdcde3b9d0d35d542', 5, NULL, '2009-06-20 10:48:00', NULL)[0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.6ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6120739280.0679029083166476', '2009-06-20 10:48:01', '861e71b883f67da70f8e18fec4c8ddcf55f4117a', 5, NULL, '2009-06-20 10:48:01', NULL)[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mKnowledge Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `knowledges`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mKnowledge Create (0.2ms)[0m   [0mINSERT INTO `knowledges` (`nr_of_correct_answers`, `updated_at`, `time_for_last_correct_answer`, `query_id`, `nr_of_answers`, `user_id`, `created_at`) VALUES(0, '2009-06-20 10:49:04', NULL, NULL, 0, NULL, '2009-06-20 10:49:04')[0m
+  [4;36;1mSQL (4.2ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mLanguage Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `languages`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLanguage Create (0.2ms)[0m   [0mINSERT INTO `languages` (`own_name`, `english_name`) VALUES('Svenska', 'Swedish')[0m
+  [4;36;1mLanguage Create (0.1ms)[0m   [0;1mINSERT INTO `languages` (`own_name`, `english_name`) VALUES('Svenska', 'Swedish')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLesson Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `lessons`[0m
+  [4;36;1mLesson Exists (0.2ms)[0m   [0;1mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` = BINARY 'Traffic') LIMIT 1[0m
+  [4;35;1mLesson Create (0.2ms)[0m   [0mINSERT INTO `lessons` (`name`, `answer_lang_id`, `updated_at`, `is_private`, `user_id`, `question_lang_id`, `created_at`) VALUES('Traffic', 2, '2009-06-20 10:49:04', 0, NULL, 1, '2009-06-20 10:49:04')[0m
+  [4;36;1mLesson Exists (0.2ms)[0m   [0;1mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` = BINARY 'Traffic') LIMIT 1[0m
+  [4;35;1mSQL (29.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLesson Exists (0.4ms)[0m   [0mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` IS NULL) LIMIT 1[0m
+  [4;36;1mLesson Exists (0.1ms)[0m   [0;1mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` IS NULL) LIMIT 1[0m
+  [4;35;1mLesson Exists (0.1ms)[0m   [0mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Exists (0.2ms)[0m   [0;1mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` = BINARY 'Food and drink') LIMIT 1[0m
+  [4;35;1mLesson Create (0.2ms)[0m   [0mINSERT INTO `lessons` (`name`, `answer_lang_id`, `updated_at`, `is_private`, `user_id`, `question_lang_id`, `created_at`) VALUES('Food and drink', 2, '2009-06-20 10:49:04', 0, NULL, 1, '2009-06-20 10:49:04')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `queries`[0m
+  [4;35;1mQuery Create (0.2ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('(att) komma/återvända hem (igen)', '2009-06-20 10:49:04', NULL, NULL, 'blablabla', '2009-06-20 10:49:04')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('Häst', '2009-06-20 10:49:04', NULL, NULL, 'Horse', '2009-06-20 10:49:04')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Create (0.2ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('gå; (att) komma/återvända hem (igen)', '2009-06-20 10:49:04', NULL, NULL, 'blablabla', '2009-06-20 10:49:04')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('Jag arbetar/jobbar på universitet(et).', '2009-06-20 10:49:04', NULL, NULL, 'blablabla', '2009-06-20 10:49:04')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Create (0.2ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('天/日', '2009-06-20 10:49:04', NULL, NULL, 'blablabla', '2009-06-20 10:49:04')[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('时(间);时(候)', '2009-06-20 10:49:04', NULL, NULL, 'blablabla', '2009-06-20 10:49:04')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Create (0.2ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('sluta jobbet/jobba/arbetet/arbeta', '2009-06-20 10:49:04', NULL, NULL, 'blablabla', '2009-06-20 10:49:04')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('sluta (jobbet/jobba/arbetet/arbeta)', '2009-06-20 10:49:04', NULL, NULL, 'blablabla', '2009-06-20 10:49:04')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Create (0.2ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('kyckling(kött)', '2009-06-20 10:49:04', NULL, NULL, 'blablabla', '2009-06-20 10:49:04')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('sluta jobbet/jobba;sluta arbetet/arbeta', '2009-06-20 10:49:04', NULL, NULL, 'blablabla', '2009-06-20 10:49:04')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Create (0.2ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('gå; (att) komma/återvända hem (igen)', '2009-06-20 10:49:04', NULL, NULL, 'blablabla', '2009-06-20 10:49:04')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6117442280.634006221059681', '2009-06-20 10:49:04', '8cae13c2d25274dc47e5eeacbcc32cb435bee668', 5, NULL, '2009-06-20 10:49:04', NULL)[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`name` = 'Unknown Guy') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6117686680.409215390720621', '2009-06-20 10:49:04', 'c1e842174bafd25a9b15f41780112a2a4f9bc889', 5, NULL, '2009-06-20 10:49:04', NULL)[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'Jonas') LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6117781980.12870346624953', '2009-06-20 10:49:04', '19dd697ed00a85f64efd743a0fa4ccd7ed4c7a06', 5, NULL, '2009-06-20 10:49:04', NULL)[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`name` = 'Jonas') LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6117877280.281434176659098', '2009-06-20 10:49:05', '4340cd04458986502fb1f78bde12cd2f5400ab1d', 5, NULL, '2009-06-20 10:49:05', NULL)[0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'New User') LIMIT 1[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6118047180.59371957514693', '2009-06-20 10:49:05', '8db553f2c07af80719b31399e0ac41f2a22a0d86', 5, NULL, '2009-06-20 10:49:05', NULL)[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6118217880.222345229020346', '2009-06-20 10:49:05', 'ea62e2d57f85f56a7d5f3288727bc50cb0d5e4aa', 5, NULL, '2009-06-20 10:49:05', NULL)[0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`name` IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mKnowledge Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `knowledges`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mKnowledge Create (0.4ms)[0m   [0mINSERT INTO `knowledges` (`nr_of_correct_answers`, `updated_at`, `time_for_last_correct_answer`, `query_id`, `nr_of_answers`, `user_id`, `created_at`) VALUES(0, '2009-06-20 10:49:43', NULL, NULL, 0, NULL, '2009-06-20 10:49:43')[0m
+  [4;36;1mSQL (866.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mLanguage Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `languages`[0m
+  [4;35;1mLanguage Exists (15.3ms)[0m   [0mSELECT `languages`.id FROM `languages` WHERE (`languages`.`own_name` IS NULL) LIMIT 1[0m
+  [4;36;1mLanguage Exists (0.9ms)[0m   [0;1mSELECT `languages`.id FROM `languages` WHERE (`languages`.`english_name` IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLanguage Exists (0.6ms)[0m   [0mSELECT `languages`.id FROM `languages` WHERE (`languages`.`own_name` = BINARY 'Svenska') LIMIT 1[0m
+  [4;36;1mLanguage Exists (13.5ms)[0m   [0;1mSELECT `languages`.id FROM `languages` WHERE (`languages`.`english_name` = BINARY 'Swedish') LIMIT 1[0m
+  [4;35;1mLanguage Create (0.2ms)[0m   [0mINSERT INTO `languages` (`own_name`, `english_name`) VALUES('Svenska', 'Swedish')[0m
+  [4;36;1mLanguage Exists (0.2ms)[0m   [0;1mSELECT `languages`.id FROM `languages` WHERE (`languages`.`own_name` = BINARY 'Svenska') LIMIT 1[0m
+  [4;35;1mLanguage Exists (0.2ms)[0m   [0mSELECT `languages`.id FROM `languages` WHERE (`languages`.`english_name` = BINARY 'Swedish') LIMIT 1[0m
+  [4;36;1mSQL (3.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `lessons`[0m
+  [4;35;1mLesson Exists (0.2ms)[0m   [0mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` = BINARY 'Traffic') LIMIT 1[0m
+  [4;36;1mLesson Create (0.2ms)[0m   [0;1mINSERT INTO `lessons` (`name`, `answer_lang_id`, `updated_at`, `is_private`, `user_id`, `question_lang_id`, `created_at`) VALUES('Traffic', 2, '2009-06-20 10:49:44', 0, NULL, 1, '2009-06-20 10:49:44')[0m
+  [4;35;1mLesson Exists (0.2ms)[0m   [0mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` = BINARY 'Traffic') LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Exists (0.2ms)[0m   [0;1mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` IS NULL) LIMIT 1[0m
+  [4;35;1mLesson Exists (0.1ms)[0m   [0mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` IS NULL) LIMIT 1[0m
+  [4;36;1mLesson Exists (0.1ms)[0m   [0;1mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLesson Exists (0.2ms)[0m   [0mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` = BINARY 'Food and drink') LIMIT 1[0m
+  [4;36;1mLesson Create (0.2ms)[0m   [0;1mINSERT INTO `lessons` (`name`, `answer_lang_id`, `updated_at`, `is_private`, `user_id`, `question_lang_id`, `created_at`) VALUES('Food and drink', 2, '2009-06-20 10:49:44', 0, NULL, 1, '2009-06-20 10:49:44')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `queries`[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('(att) komma/återvända hem (igen)', '2009-06-20 10:49:44', NULL, NULL, 'blablabla', '2009-06-20 10:49:44')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Create (0.2ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('Häst', '2009-06-20 10:49:44', NULL, NULL, 'Horse', '2009-06-20 10:49:44')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('gå; (att) komma/återvända hem (igen)', '2009-06-20 10:49:44', NULL, NULL, 'blablabla', '2009-06-20 10:49:44')[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Create (0.2ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('Jag arbetar/jobbar på universitet(et).', '2009-06-20 10:49:44', NULL, NULL, 'blablabla', '2009-06-20 10:49:44')[0m
+  [4;36;1mSQL (39.9ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('天/日', '2009-06-20 10:49:44', NULL, NULL, 'blablabla', '2009-06-20 10:49:44')[0m
+  [4;35;1mQuery Create (0.6ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('时(间);时(候)', '2009-06-20 10:49:44', NULL, NULL, 'blablabla', '2009-06-20 10:49:44')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.3ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('sluta jobbet/jobba/arbetet/arbeta', '2009-06-20 10:49:44', NULL, NULL, 'blablabla', '2009-06-20 10:49:44')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Create (0.2ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('sluta (jobbet/jobba/arbetet/arbeta)', '2009-06-20 10:49:44', NULL, NULL, 'blablabla', '2009-06-20 10:49:44')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('kyckling(kött)', '2009-06-20 10:49:44', NULL, NULL, 'blablabla', '2009-06-20 10:49:44')[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Create (0.2ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('sluta jobbet/jobba;sluta arbetet/arbeta', '2009-06-20 10:49:44', NULL, NULL, 'blablabla', '2009-06-20 10:49:44')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('gå; (att) komma/återvända hem (igen)', '2009-06-20 10:49:44', NULL, NULL, 'blablabla', '2009-06-20 10:49:44')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Exists (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;35;1mUser Create (0.7ms)[0m   [0mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6118678580.764779016628997', '2009-06-20 10:49:44', '18d3d94d7cb75cec741d3c97491cfcfb491cae22', 5, NULL, '2009-06-20 10:49:44', NULL)[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'Unknown Guy') LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6118923080.568684677000762', '2009-06-20 10:49:44', '76baa4773cf631348e240fa4e3cba2329457f31d', 5, NULL, '2009-06-20 10:49:44', NULL)[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`name` = 'Jonas') LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6119018280.657766560700867', '2009-06-20 10:49:44', '9248864af9105d621ff99d7be81ceb9608925c27', 5, NULL, '2009-06-20 10:49:44', NULL)[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'Jonas') LIMIT 1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6119113680.735545204221096', '2009-06-20 10:49:44', '0feec5ac5c98f072c1052e84b15bd7e3d076aa79', 5, NULL, '2009-06-20 10:49:44', NULL)[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'New User') LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6119283580.661828688477246', '2009-06-20 10:49:44', 'f542d3b461337aa27592e7259bb5eacee024ac1d', 5, NULL, '2009-06-20 10:49:44', NULL)[0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6119454280.861283547784608', '2009-06-20 10:49:44', '22d030463d9d65b4feef9dbe4dc512c53b94e689', 5, NULL, '2009-06-20 10:49:44', NULL)[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mKnowledge Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `knowledges`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mKnowledge Create (0.2ms)[0m   [0mINSERT INTO `knowledges` (`nr_of_correct_answers`, `updated_at`, `time_for_last_correct_answer`, `query_id`, `nr_of_answers`, `user_id`, `created_at`) VALUES(0, '2009-06-20 10:51:31', NULL, NULL, 0, NULL, '2009-06-20 10:51:31')[0m
+  [4;36;1mSQL (3.2ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mLanguage Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `languages`[0m
+  [4;35;1mLanguage Exists (0.3ms)[0m   [0mSELECT `languages`.id FROM `languages` WHERE (`languages`.`own_name` IS NULL) LIMIT 1[0m
+  [4;36;1mLanguage Exists (0.1ms)[0m   [0;1mSELECT `languages`.id FROM `languages` WHERE (`languages`.`english_name` IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLanguage Exists (0.2ms)[0m   [0mSELECT `languages`.id FROM `languages` WHERE (`languages`.`own_name` = BINARY 'Svenska') LIMIT 1[0m
+  [4;36;1mLanguage Exists (0.1ms)[0m   [0;1mSELECT `languages`.id FROM `languages` WHERE (`languages`.`english_name` = BINARY 'Swedish') LIMIT 1[0m
+  [4;35;1mLanguage Create (0.2ms)[0m   [0mINSERT INTO `languages` (`own_name`, `english_name`) VALUES('Svenska', 'Swedish')[0m
+  [4;36;1mLanguage Exists (0.1ms)[0m   [0;1mSELECT `languages`.id FROM `languages` WHERE (`languages`.`own_name` = BINARY 'Svenska') LIMIT 1[0m
+  [4;35;1mLanguage Exists (0.1ms)[0m   [0mSELECT `languages`.id FROM `languages` WHERE (`languages`.`english_name` = BINARY 'Swedish') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `lessons`[0m
+  [4;35;1mLesson Exists (0.2ms)[0m   [0mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` = BINARY 'Traffic') LIMIT 1[0m
+  [4;36;1mLesson Create (0.2ms)[0m   [0;1mINSERT INTO `lessons` (`name`, `answer_lang_id`, `updated_at`, `is_private`, `user_id`, `question_lang_id`, `created_at`) VALUES('Traffic', 2, '2009-06-20 10:51:31', 0, NULL, 1, '2009-06-20 10:51:31')[0m
+  [4;35;1mLesson Exists (0.3ms)[0m   [0mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` = BINARY 'Traffic') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Exists (0.2ms)[0m   [0;1mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` IS NULL) LIMIT 1[0m
+  [4;35;1mLesson Exists (0.1ms)[0m   [0mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` IS NULL) LIMIT 1[0m
+  [4;36;1mLesson Exists (0.1ms)[0m   [0;1mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLesson Exists (0.2ms)[0m   [0mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` = BINARY 'Food and drink') LIMIT 1[0m
+  [4;36;1mLesson Create (0.3ms)[0m   [0;1mINSERT INTO `lessons` (`name`, `answer_lang_id`, `updated_at`, `is_private`, `user_id`, `question_lang_id`, `created_at`) VALUES('Food and drink', 2, '2009-06-20 10:51:31', 0, NULL, 1, '2009-06-20 10:51:31')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `queries`[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('(att) komma/återvända hem (igen)', '2009-06-20 10:51:31', NULL, NULL, 'blablabla', '2009-06-20 10:51:31')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Create (0.2ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('Häst', '2009-06-20 10:51:31', NULL, NULL, 'Horse', '2009-06-20 10:51:31')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('gå; (att) komma/återvända hem (igen)', '2009-06-20 10:51:31', NULL, NULL, 'blablabla', '2009-06-20 10:51:31')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Create (0.2ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('Jag arbetar/jobbar på universitet(et).', '2009-06-20 10:51:31', NULL, NULL, 'blablabla', '2009-06-20 10:51:31')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('天/日', '2009-06-20 10:51:31', NULL, NULL, 'blablabla', '2009-06-20 10:51:31')[0m
+  [4;35;1mQuery Create (0.1ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('时(间);时(候)', '2009-06-20 10:51:31', NULL, NULL, 'blablabla', '2009-06-20 10:51:31')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('sluta jobbet/jobba/arbetet/arbeta', '2009-06-20 10:51:31', NULL, NULL, 'blablabla', '2009-06-20 10:51:31')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Create (0.2ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('sluta (jobbet/jobba/arbetet/arbeta)', '2009-06-20 10:51:31', NULL, NULL, 'blablabla', '2009-06-20 10:51:31')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('kyckling(kött)', '2009-06-20 10:51:31', NULL, NULL, 'blablabla', '2009-06-20 10:51:31')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Create (0.2ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('sluta jobbet/jobba;sluta arbetet/arbeta', '2009-06-20 10:51:31', NULL, NULL, 'blablabla', '2009-06-20 10:51:31')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('gå; (att) komma/återvända hem (igen)', '2009-06-20 10:51:31', NULL, NULL, 'blablabla', '2009-06-20 10:51:31')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6117806580.813117519713664', '2009-06-20 10:51:32', '791f66759d204ea17f8720219751aa32299518bd', 5, NULL, '2009-06-20 10:51:32', NULL)[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'Unknown Guy') LIMIT 1[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6118051080.555770484869111', '2009-06-20 10:51:32', '8684cc0b3a84ece60ca739c7a052892883056db9', 5, NULL, '2009-06-20 10:51:32', NULL)[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`name` = 'Jonas') LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;35;1mUser Create (0.1ms)[0m   [0mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6118146280.672271885477454', '2009-06-20 10:51:32', 'c1a540bf1aa44ac06b09152a40421f4414b73a60', 5, NULL, '2009-06-20 10:51:32', NULL)[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'Jonas') LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6118241680.0631568792817777', '2009-06-20 10:51:32', 'fcaa9e5914df5aa288d54eb1a9fa0138dcdf45e9', 5, NULL, '2009-06-20 10:51:32', NULL)[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'New User') LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6118411580.252444639776701', '2009-06-20 10:51:32', '7b011403fe73ccbd0170eae03a71d7500d417478', 5, NULL, '2009-06-20 10:51:32', NULL)[0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6118582280.202224255622901', '2009-06-20 10:51:32', 'e9fd6ce46e05184eaa89d06607d545309fe643e7', 5, NULL, '2009-06-20 10:51:32', NULL)[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mKnowledge Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `knowledges`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mKnowledge Create (0.3ms)[0m   [0mINSERT INTO `knowledges` (`nr_of_correct_answers`, `updated_at`, `time_for_last_correct_answer`, `query_id`, `nr_of_answers`, `user_id`, `created_at`) VALUES(0, '2009-06-20 10:51:44', NULL, NULL, 0, NULL, '2009-06-20 10:51:44')[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mLanguage Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `languages`[0m
+  [4;35;1mLanguage Exists (0.3ms)[0m   [0mSELECT `languages`.id FROM `languages` WHERE (`languages`.`own_name` IS NULL) LIMIT 1[0m
+  [4;36;1mLanguage Exists (0.1ms)[0m   [0;1mSELECT `languages`.id FROM `languages` WHERE (`languages`.`english_name` IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLanguage Exists (0.2ms)[0m   [0mSELECT `languages`.id FROM `languages` WHERE (`languages`.`own_name` = BINARY 'Svenska') LIMIT 1[0m
+  [4;36;1mLanguage Exists (0.1ms)[0m   [0;1mSELECT `languages`.id FROM `languages` WHERE (`languages`.`english_name` = BINARY 'Swedish') LIMIT 1[0m
+  [4;35;1mLanguage Create (0.2ms)[0m   [0mINSERT INTO `languages` (`own_name`, `english_name`) VALUES('Svenska', 'Swedish')[0m
+  [4;36;1mLanguage Exists (0.2ms)[0m   [0;1mSELECT `languages`.id FROM `languages` WHERE (`languages`.`own_name` = BINARY 'Svenska') LIMIT 1[0m
+  [4;35;1mLanguage Exists (0.3ms)[0m   [0mSELECT `languages`.id FROM `languages` WHERE (`languages`.`english_name` = BINARY 'Swedish') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `lessons`[0m
+  [4;35;1mLesson Exists (0.2ms)[0m   [0mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` = BINARY 'Traffic') LIMIT 1[0m
+  [4;36;1mLesson Create (0.2ms)[0m   [0;1mINSERT INTO `lessons` (`name`, `answer_lang_id`, `updated_at`, `is_private`, `user_id`, `question_lang_id`, `created_at`) VALUES('Traffic', 2, '2009-06-20 10:51:44', 0, NULL, 1, '2009-06-20 10:51:44')[0m
+  [4;35;1mLesson Exists (0.2ms)[0m   [0mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` = BINARY 'Traffic') LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Exists (0.2ms)[0m   [0;1mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` IS NULL) LIMIT 1[0m
+  [4;35;1mLesson Exists (0.1ms)[0m   [0mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` IS NULL) LIMIT 1[0m
+  [4;36;1mLesson Exists (0.1ms)[0m   [0;1mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLesson Exists (0.2ms)[0m   [0mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` = BINARY 'Food and drink') LIMIT 1[0m
+  [4;36;1mLesson Create (0.2ms)[0m   [0;1mINSERT INTO `lessons` (`name`, `answer_lang_id`, `updated_at`, `is_private`, `user_id`, `question_lang_id`, `created_at`) VALUES('Food and drink', 2, '2009-06-20 10:51:44', 0, NULL, 1, '2009-06-20 10:51:44')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `queries`[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('(att) komma/återvända hem (igen)', '2009-06-20 10:51:44', NULL, NULL, 'blablabla', '2009-06-20 10:51:44')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Create (0.2ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('Häst', '2009-06-20 10:51:44', NULL, NULL, 'Horse', '2009-06-20 10:51:44')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('gå; (att) komma/återvända hem (igen)', '2009-06-20 10:51:44', NULL, NULL, 'blablabla', '2009-06-20 10:51:44')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Create (0.2ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('Jag arbetar/jobbar på universitet(et).', '2009-06-20 10:51:44', NULL, NULL, 'blablabla', '2009-06-20 10:51:44')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('天/日', '2009-06-20 10:51:44', NULL, NULL, 'blablabla', '2009-06-20 10:51:44')[0m
+  [4;35;1mQuery Create (0.1ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('时(间);时(候)', '2009-06-20 10:51:44', NULL, NULL, 'blablabla', '2009-06-20 10:51:44')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('sluta jobbet/jobba/arbetet/arbeta', '2009-06-20 10:51:44', NULL, NULL, 'blablabla', '2009-06-20 10:51:44')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Create (0.2ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('sluta (jobbet/jobba/arbetet/arbeta)', '2009-06-20 10:51:44', NULL, NULL, 'blablabla', '2009-06-20 10:51:44')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('kyckling(kött)', '2009-06-20 10:51:44', NULL, NULL, 'blablabla', '2009-06-20 10:51:44')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Create (0.2ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('sluta jobbet/jobba;sluta arbetet/arbeta', '2009-06-20 10:51:44', NULL, NULL, 'blablabla', '2009-06-20 10:51:44')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('gå; (att) komma/återvända hem (igen)', '2009-06-20 10:51:44', NULL, NULL, 'blablabla', '2009-06-20 10:51:44')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Exists (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6118254080.0719900690152383', '2009-06-20 10:51:44', '84812a1bba115f49e0c2d897c317c46c9eddd544', 5, NULL, '2009-06-20 10:51:44', NULL)[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'Unknown Guy') LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6118498580.446252261609991', '2009-06-20 10:51:44', 'a5f5c522c118d790f70a8071dbdebaa4d2e0b2cd', 5, NULL, '2009-06-20 10:51:44', NULL)[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`name` = 'Jonas') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6118593780.916623062221234', '2009-06-20 10:51:44', '4ffe27dfc8212817383a17da977b0dd7da56b860', 5, NULL, '2009-06-20 10:51:44', NULL)[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'Jonas') LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6118689180.129524647435084', '2009-06-20 10:51:44', 'fc3b3add2aefb113b43ec8499a4689ba9c2e751b', 5, NULL, '2009-06-20 10:51:44', NULL)[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'New User') LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6118859080.132594011080954', '2009-06-20 10:51:44', 'c1af2d8b7a37f063d74fb00f11764b743b75ecd9', 5, NULL, '2009-06-20 10:51:44', NULL)[0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6119029780.433078619203273', '2009-06-20 10:51:44', '89f3767f07ecfd80175ddd0401b470b9d1b6f4c2', 5, NULL, '2009-06-20 10:51:44', NULL)[0m
+  [4;35;1mUser Exists (0.6ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mKnowledge Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `knowledges`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mKnowledge Create (0.3ms)[0m   [0mINSERT INTO `knowledges` (`nr_of_correct_answers`, `updated_at`, `time_for_last_correct_answer`, `query_id`, `nr_of_answers`, `user_id`, `created_at`) VALUES(0, '2009-06-20 10:54:45', NULL, NULL, 0, NULL, '2009-06-20 10:54:45')[0m
+  [4;36;1mSQL (4.9ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mLanguage Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `languages`[0m
+  [4;35;1mLanguage Exists (0.3ms)[0m   [0mSELECT `languages`.id FROM `languages` WHERE (`languages`.`own_name` IS NULL) LIMIT 1[0m
+  [4;36;1mLanguage Exists (0.1ms)[0m   [0;1mSELECT `languages`.id FROM `languages` WHERE (`languages`.`english_name` IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLanguage Exists (0.2ms)[0m   [0mSELECT `languages`.id FROM `languages` WHERE (`languages`.`own_name` = BINARY 'Svenska') LIMIT 1[0m
+  [4;36;1mLanguage Exists (0.1ms)[0m   [0;1mSELECT `languages`.id FROM `languages` WHERE (`languages`.`english_name` = BINARY 'Swedish') LIMIT 1[0m
+  [4;35;1mLanguage Create (0.2ms)[0m   [0mINSERT INTO `languages` (`own_name`, `english_name`) VALUES('Svenska', 'Swedish')[0m
+  [4;36;1mLanguage Exists (0.2ms)[0m   [0;1mSELECT `languages`.id FROM `languages` WHERE (`languages`.`own_name` = BINARY 'Svenska') LIMIT 1[0m
+  [4;35;1mLanguage Exists (0.2ms)[0m   [0mSELECT `languages`.id FROM `languages` WHERE (`languages`.`english_name` = BINARY 'Swedish') LIMIT 1[0m
+  [4;36;1mLanguage Exists (0.2ms)[0m   [0;1mSELECT `languages`.id FROM `languages` WHERE (`languages`.`own_name` = BINARY 'Svenska som andraspråk') LIMIT 1[0m
+  [4;35;1mLanguage Exists (0.1ms)[0m   [0mSELECT `languages`.id FROM `languages` WHERE (`languages`.`english_name` = BINARY 'Swedish') LIMIT 1[0m
+  [4;36;1mLanguage Exists (0.2ms)[0m   [0;1mSELECT `languages`.id FROM `languages` WHERE (`languages`.`own_name` = BINARY 'Svenska') LIMIT 1[0m
+  [4;35;1mLanguage Exists (0.1ms)[0m   [0mSELECT `languages`.id FROM `languages` WHERE (`languages`.`english_name` = BINARY 'Scandinavian') LIMIT 1[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `lessons`[0m
+  [4;35;1mLesson Exists (0.3ms)[0m   [0mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` = BINARY 'Traffic') LIMIT 1[0m
+  [4;36;1mLesson Create (0.2ms)[0m   [0;1mINSERT INTO `lessons` (`name`, `answer_lang_id`, `updated_at`, `is_private`, `user_id`, `question_lang_id`, `created_at`) VALUES('Traffic', 2, '2009-06-20 10:54:46', 0, NULL, 1, '2009-06-20 10:54:46')[0m
+  [4;35;1mLesson Exists (0.2ms)[0m   [0mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` = BINARY 'Traffic') LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Exists (0.2ms)[0m   [0;1mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` IS NULL) LIMIT 1[0m
+  [4;35;1mLesson Exists (0.1ms)[0m   [0mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` IS NULL) LIMIT 1[0m
+  [4;36;1mLesson Exists (0.1ms)[0m   [0;1mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLesson Exists (0.2ms)[0m   [0mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` = BINARY 'Food and drink') LIMIT 1[0m
+  [4;36;1mLesson Create (0.6ms)[0m   [0;1mINSERT INTO `lessons` (`name`, `answer_lang_id`, `updated_at`, `is_private`, `user_id`, `question_lang_id`, `created_at`) VALUES('Food and drink', 2, '2009-06-20 10:54:46', 0, NULL, 1, '2009-06-20 10:54:46')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `queries`[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('(att) komma/återvända hem (igen)', '2009-06-20 10:54:46', NULL, NULL, 'blablabla', '2009-06-20 10:54:46')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Create (0.2ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('Häst', '2009-06-20 10:54:46', NULL, NULL, 'Horse', '2009-06-20 10:54:46')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('gå; (att) komma/återvända hem (igen)', '2009-06-20 10:54:46', NULL, NULL, 'blablabla', '2009-06-20 10:54:46')[0m
+  [4;35;1mSQL (20.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Create (0.2ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('Jag arbetar/jobbar på universitet(et).', '2009-06-20 10:54:46', NULL, NULL, 'blablabla', '2009-06-20 10:54:46')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('天/日', '2009-06-20 10:54:46', NULL, NULL, 'blablabla', '2009-06-20 10:54:46')[0m
+  [4;35;1mQuery Create (0.4ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('时(间);时(候)', '2009-06-20 10:54:46', NULL, NULL, 'blablabla', '2009-06-20 10:54:46')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.3ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('sluta jobbet/jobba/arbetet/arbeta', '2009-06-20 10:54:46', NULL, NULL, 'blablabla', '2009-06-20 10:54:46')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Create (0.2ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('sluta (jobbet/jobba/arbetet/arbeta)', '2009-06-20 10:54:46', NULL, NULL, 'blablabla', '2009-06-20 10:54:46')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('kyckling(kött)', '2009-06-20 10:54:46', NULL, NULL, 'blablabla', '2009-06-20 10:54:46')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Create (0.2ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('sluta jobbet/jobba;sluta arbetet/arbeta', '2009-06-20 10:54:46', NULL, NULL, 'blablabla', '2009-06-20 10:54:46')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('gå; (att) komma/återvända hem (igen)', '2009-06-20 10:54:46', NULL, NULL, 'blablabla', '2009-06-20 10:54:46')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Exists (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6118010880.578922359863107', '2009-06-20 10:54:46', '8784b1c003b9f640ead81350b808e7658d3f7417', 5, NULL, '2009-06-20 10:54:46', NULL)[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'Unknown Guy') LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6118255280.315829233267086', '2009-06-20 10:54:46', '57f7a24f28f72fbc6ac2cbb8f8c8ebc64cb66fed', 5, NULL, '2009-06-20 10:54:46', NULL)[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`name` = 'Jonas') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6118350580.541470839293123', '2009-06-20 10:54:46', 'dc5a827b173f739770a6ca39834958ae3bbf48bd', 5, NULL, '2009-06-20 10:54:46', NULL)[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'Jonas') LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.5ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6118446080.741669219385154', '2009-06-20 10:54:46', '139f3af31c39fec86a3f149576b9602a312f26ae', 5, NULL, '2009-06-20 10:54:46', NULL)[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'New User') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6118615780.700503100360128', '2009-06-20 10:54:46', '764c27b14f8f25e5a0b9d5b4e0253c5ec0a3ae15', 5, NULL, '2009-06-20 10:54:46', NULL)[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6118786580.893783191574663', '2009-06-20 10:54:46', '2a49d2c33048e2153b3aacb3357d1dfe4e37b306', 5, NULL, '2009-06-20 10:54:46', NULL)[0m
+  [4;35;1mUser Exists (0.5ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mKnowledge Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `knowledges`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mKnowledge Create (0.2ms)[0m   [0mINSERT INTO `knowledges` (`nr_of_correct_answers`, `updated_at`, `time_for_last_correct_answer`, `query_id`, `nr_of_answers`, `user_id`, `created_at`) VALUES(0, '2009-06-20 10:56:31', NULL, NULL, 0, NULL, '2009-06-20 10:56:31')[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mLanguage Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `languages`[0m
+  [4;35;1mLanguage Exists (0.3ms)[0m   [0mSELECT `languages`.id FROM `languages` WHERE (`languages`.`own_name` IS NULL) LIMIT 1[0m
+  [4;36;1mLanguage Exists (0.1ms)[0m   [0;1mSELECT `languages`.id FROM `languages` WHERE (`languages`.`english_name` IS NULL) LIMIT 1[0m
+  [4;35;1mLanguage Exists (0.2ms)[0m   [0mSELECT `languages`.id FROM `languages` WHERE (`languages`.`own_name` = BINARY 'Svenska') LIMIT 1[0m
+  [4;36;1mLanguage Exists (0.1ms)[0m   [0;1mSELECT `languages`.id FROM `languages` WHERE (`languages`.`english_name` IS NULL) LIMIT 1[0m
+  [4;35;1mLanguage Exists (0.1ms)[0m   [0mSELECT `languages`.id FROM `languages` WHERE (`languages`.`own_name` IS NULL) LIMIT 1[0m
+  [4;36;1mLanguage Exists (0.2ms)[0m   [0;1mSELECT `languages`.id FROM `languages` WHERE (`languages`.`english_name` = BINARY 'Swedish') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLanguage Exists (0.1ms)[0m   [0mSELECT `languages`.id FROM `languages` WHERE (`languages`.`own_name` = BINARY 'Svenska') LIMIT 1[0m
+  [4;36;1mLanguage Exists (0.1ms)[0m   [0;1mSELECT `languages`.id FROM `languages` WHERE (`languages`.`english_name` = BINARY 'Swedish') LIMIT 1[0m
+  [4;35;1mLanguage Create (0.2ms)[0m   [0mINSERT INTO `languages` (`own_name`, `english_name`) VALUES('Svenska', 'Swedish')[0m
+  [4;36;1mLanguage Exists (0.2ms)[0m   [0;1mSELECT `languages`.id FROM `languages` WHERE (`languages`.`own_name` = BINARY 'Svenska') LIMIT 1[0m
+  [4;35;1mLanguage Exists (0.1ms)[0m   [0mSELECT `languages`.id FROM `languages` WHERE (`languages`.`english_name` = BINARY 'Swedish') LIMIT 1[0m
+  [4;36;1mLanguage Exists (0.2ms)[0m   [0;1mSELECT `languages`.id FROM `languages` WHERE (`languages`.`own_name` = BINARY 'Svenska som andraspråk') LIMIT 1[0m
+  [4;35;1mLanguage Exists (0.1ms)[0m   [0mSELECT `languages`.id FROM `languages` WHERE (`languages`.`english_name` = BINARY 'Swedish') LIMIT 1[0m
+  [4;36;1mLanguage Exists (0.2ms)[0m   [0;1mSELECT `languages`.id FROM `languages` WHERE (`languages`.`own_name` = BINARY 'Svenska') LIMIT 1[0m
+  [4;35;1mLanguage Exists (0.2ms)[0m   [0mSELECT `languages`.id FROM `languages` WHERE (`languages`.`english_name` = BINARY 'Scandinavian') LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `lessons`[0m
+  [4;35;1mLesson Exists (0.4ms)[0m   [0mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` = BINARY 'Traffic') LIMIT 1[0m
+  [4;36;1mLesson Create (0.2ms)[0m   [0;1mINSERT INTO `lessons` (`name`, `answer_lang_id`, `updated_at`, `is_private`, `user_id`, `question_lang_id`, `created_at`) VALUES('Traffic', 2, '2009-06-20 10:56:31', 0, NULL, 1, '2009-06-20 10:56:31')[0m
+  [4;35;1mLesson Exists (0.2ms)[0m   [0mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` = BINARY 'Traffic') LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Exists (0.2ms)[0m   [0;1mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` IS NULL) LIMIT 1[0m
+  [4;35;1mLesson Exists (0.1ms)[0m   [0mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` IS NULL) LIMIT 1[0m
+  [4;36;1mLesson Exists (0.1ms)[0m   [0;1mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLesson Exists (0.2ms)[0m   [0mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` = BINARY 'Food and drink') LIMIT 1[0m
+  [4;36;1mLesson Create (0.2ms)[0m   [0;1mINSERT INTO `lessons` (`name`, `answer_lang_id`, `updated_at`, `is_private`, `user_id`, `question_lang_id`, `created_at`) VALUES('Food and drink', 2, '2009-06-20 10:56:31', 0, NULL, 1, '2009-06-20 10:56:31')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `queries`[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('(att) komma/återvända hem (igen)', '2009-06-20 10:56:31', NULL, NULL, 'blablabla', '2009-06-20 10:56:31')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Create (0.2ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('Häst', '2009-06-20 10:56:31', NULL, NULL, 'Horse', '2009-06-20 10:56:31')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('gå; (att) komma/återvända hem (igen)', '2009-06-20 10:56:31', NULL, NULL, 'blablabla', '2009-06-20 10:56:31')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Create (0.2ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('Jag arbetar/jobbar på universitet(et).', '2009-06-20 10:56:31', NULL, NULL, 'blablabla', '2009-06-20 10:56:31')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('天/日', '2009-06-20 10:56:31', NULL, NULL, 'blablabla', '2009-06-20 10:56:31')[0m
+  [4;35;1mQuery Create (0.2ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('时(间);时(候)', '2009-06-20 10:56:31', NULL, NULL, 'blablabla', '2009-06-20 10:56:31')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('sluta jobbet/jobba/arbetet/arbeta', '2009-06-20 10:56:31', NULL, NULL, 'blablabla', '2009-06-20 10:56:31')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Create (0.2ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('sluta (jobbet/jobba/arbetet/arbeta)', '2009-06-20 10:56:31', NULL, NULL, 'blablabla', '2009-06-20 10:56:31')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.1ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('kyckling(kött)', '2009-06-20 10:56:31', NULL, NULL, 'blablabla', '2009-06-20 10:56:31')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Create (0.7ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('sluta jobbet/jobba;sluta arbetet/arbeta', '2009-06-20 10:56:31', NULL, NULL, 'blablabla', '2009-06-20 10:56:31')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('gå; (att) komma/återvända hem (igen)', '2009-06-20 10:56:31', NULL, NULL, 'blablabla', '2009-06-20 10:56:31')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6119866980.575019149634791', '2009-06-20 10:56:31', 'c37f2575a52e158960ef42f58d255089da173520', 5, NULL, '2009-06-20 10:56:31', NULL)[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'Unknown Guy') LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6120111380.0534033149933137', '2009-06-20 10:56:31', '08dbbbb6491dc8fcf553648933cefcd06f58ee1e', 5, NULL, '2009-06-20 10:56:31', NULL)[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`name` = 'Jonas') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6120206680.967393653663586', '2009-06-20 10:56:31', '1b501d2b3b1e866598bd322dd68732424f5eda45', 5, NULL, '2009-06-20 10:56:31', NULL)[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'Jonas') LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6120302080.556855745930392', '2009-06-20 10:56:31', 'b7380fc3518512214fad1e9fcb8b287e95d0c6bc', 5, NULL, '2009-06-20 10:56:31', NULL)[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'New User') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6120471980.898062932712284', '2009-06-20 10:56:31', 'fb1ca989a73b91404623664395512aa2bda0cf29', 5, NULL, '2009-06-20 10:56:31', NULL)[0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6120642680.197701595981355', '2009-06-20 10:56:31', 'bfe35e012cc84195bb078e542e0ee8c7d746278b', 5, NULL, '2009-06-20 10:56:31', NULL)[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mKnowledge Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `knowledges`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mKnowledge Create (0.8ms)[0m   [0mINSERT INTO `knowledges` (`nr_of_correct_answers`, `updated_at`, `time_for_last_correct_answer`, `query_id`, `nr_of_answers`, `user_id`, `created_at`) VALUES(0, '2009-06-20 10:57:54', NULL, NULL, 0, NULL, '2009-06-20 10:57:54')[0m
+  [4;36;1mSQL (8.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mLanguage Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `languages`[0m
+  [4;35;1mLanguage Exists (0.3ms)[0m   [0mSELECT `languages`.id FROM `languages` WHERE (`languages`.`own_name` IS NULL) LIMIT 1[0m
+  [4;36;1mLanguage Exists (0.1ms)[0m   [0;1mSELECT `languages`.id FROM `languages` WHERE (`languages`.`english_name` IS NULL) LIMIT 1[0m
+  [4;35;1mLanguage Exists (0.2ms)[0m   [0mSELECT `languages`.id FROM `languages` WHERE (`languages`.`own_name` = BINARY 'Svenska') LIMIT 1[0m
+  [4;36;1mLanguage Exists (0.1ms)[0m   [0;1mSELECT `languages`.id FROM `languages` WHERE (`languages`.`english_name` IS NULL) LIMIT 1[0m
+  [4;35;1mLanguage Exists (0.1ms)[0m   [0mSELECT `languages`.id FROM `languages` WHERE (`languages`.`own_name` IS NULL) LIMIT 1[0m
+  [4;36;1mLanguage Exists (0.2ms)[0m   [0;1mSELECT `languages`.id FROM `languages` WHERE (`languages`.`english_name` = BINARY 'Swedish') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLanguage Exists (0.1ms)[0m   [0mSELECT `languages`.id FROM `languages` WHERE (`languages`.`own_name` = BINARY 'Svenska') LIMIT 1[0m
+  [4;36;1mLanguage Exists (0.1ms)[0m   [0;1mSELECT `languages`.id FROM `languages` WHERE (`languages`.`english_name` = BINARY 'Swedish') LIMIT 1[0m
+  [4;35;1mLanguage Create (0.2ms)[0m   [0mINSERT INTO `languages` (`own_name`, `english_name`) VALUES('Svenska', 'Swedish')[0m
+  [4;36;1mLanguage Exists (0.2ms)[0m   [0;1mSELECT `languages`.id FROM `languages` WHERE (`languages`.`own_name` = BINARY 'Svenska') LIMIT 1[0m
+  [4;35;1mLanguage Exists (0.1ms)[0m   [0mSELECT `languages`.id FROM `languages` WHERE (`languages`.`english_name` = BINARY 'Swedish') LIMIT 1[0m
+  [4;36;1mLanguage Exists (0.2ms)[0m   [0;1mSELECT `languages`.id FROM `languages` WHERE (`languages`.`own_name` = BINARY 'Svenska som andraspråk') LIMIT 1[0m
+  [4;35;1mLanguage Exists (0.1ms)[0m   [0mSELECT `languages`.id FROM `languages` WHERE (`languages`.`english_name` = BINARY 'Swedish') LIMIT 1[0m
+  [4;36;1mLanguage Exists (0.2ms)[0m   [0;1mSELECT `languages`.id FROM `languages` WHERE (`languages`.`own_name` = BINARY 'Svenska') LIMIT 1[0m
+  [4;35;1mLanguage Exists (0.2ms)[0m   [0mSELECT `languages`.id FROM `languages` WHERE (`languages`.`english_name` = BINARY 'Scandinavian') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `lessons`[0m
+  [4;35;1mLesson Exists (1.0ms)[0m   [0mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` = BINARY 'Traffic') LIMIT 1[0m
+  [4;36;1mLesson Create (0.2ms)[0m   [0;1mINSERT INTO `lessons` (`name`, `answer_lang_id`, `updated_at`, `is_private`, `user_id`, `question_lang_id`, `created_at`) VALUES('Traffic', 2, '2009-06-20 10:57:54', 0, NULL, 1, '2009-06-20 10:57:54')[0m
+  [4;35;1mLesson Exists (0.3ms)[0m   [0mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` = BINARY 'Traffic') LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Exists (0.2ms)[0m   [0;1mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` IS NULL) LIMIT 1[0m
+  [4;35;1mLesson Exists (0.1ms)[0m   [0mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` IS NULL) LIMIT 1[0m
+  [4;36;1mLesson Exists (0.1ms)[0m   [0;1mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLesson Exists (0.2ms)[0m   [0mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` = BINARY 'Food and drink') LIMIT 1[0m
+  [4;36;1mLesson Create (0.2ms)[0m   [0;1mINSERT INTO `lessons` (`name`, `answer_lang_id`, `updated_at`, `is_private`, `user_id`, `question_lang_id`, `created_at`) VALUES('Food and drink', 2, '2009-06-20 10:57:54', 0, NULL, 1, '2009-06-20 10:57:54')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `queries`[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('(att) komma/återvända hem (igen)', '2009-06-20 10:57:54', NULL, NULL, 'blablabla', '2009-06-20 10:57:54')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Create (0.2ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('Häst', '2009-06-20 10:57:54', NULL, NULL, 'Horse', '2009-06-20 10:57:54')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('gå; (att) komma/återvända hem (igen)', '2009-06-20 10:57:54', NULL, NULL, 'blablabla', '2009-06-20 10:57:54')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Create (0.2ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('Jag arbetar/jobbar på universitet(et).', '2009-06-20 10:57:54', NULL, NULL, 'blablabla', '2009-06-20 10:57:54')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('天/日', '2009-06-20 10:57:54', NULL, NULL, 'blablabla', '2009-06-20 10:57:54')[0m
+  [4;35;1mQuery Create (0.2ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('时(间);时(候)', '2009-06-20 10:57:54', NULL, NULL, 'blablabla', '2009-06-20 10:57:54')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('sluta jobbet/jobba/arbetet/arbeta', '2009-06-20 10:57:54', NULL, NULL, 'blablabla', '2009-06-20 10:57:54')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Create (0.2ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('sluta (jobbet/jobba/arbetet/arbeta)', '2009-06-20 10:57:54', NULL, NULL, 'blablabla', '2009-06-20 10:57:54')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('kyckling(kött)', '2009-06-20 10:57:54', NULL, NULL, 'blablabla', '2009-06-20 10:57:54')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Create (0.2ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('sluta jobbet/jobba;sluta arbetet/arbeta', '2009-06-20 10:57:54', NULL, NULL, 'blablabla', '2009-06-20 10:57:54')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('gå; (att) komma/återvända hem (igen)', '2009-06-20 10:57:54', NULL, NULL, 'blablabla', '2009-06-20 10:57:54')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Exists (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6118884880.0265392391918811', '2009-06-20 10:57:54', '266e8fb2ee77102183bf2706d144bfc7609abdf4', 5, NULL, '2009-06-20 10:57:54', NULL)[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'Unknown Guy') LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6119129280.705891973247094', '2009-06-20 10:57:54', '703df2ff339a5b38c47aebbca4d6bf6c205b754d', 5, NULL, '2009-06-20 10:57:54', NULL)[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`name` = 'Jonas') LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6119224580.445798936831988', '2009-06-20 10:57:54', '5d744e87b4973b0210452650d8508450aa7b195a', 5, NULL, '2009-06-20 10:57:54', NULL)[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'Jonas') LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6119319980.102652326504993', '2009-06-20 10:57:54', '54735dc0b2aa95343d4ae4f7950ca4119495b9f2', 5, NULL, '2009-06-20 10:57:54', NULL)[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'New User') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6119489880.0575807897194336', '2009-06-20 10:57:54', '9f2c9ba02eee5050f415409d8a635a9ab43d1005', 5, NULL, '2009-06-20 10:57:54', NULL)[0m
+  [4;36;1mUser Exists (0.5ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6119660580.847255617784284', '2009-06-20 10:57:54', 'b71339847fd099e80c3a35d8005d331685b16dd0', 5, NULL, '2009-06-20 10:57:54', NULL)[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mKnowledge Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `knowledges`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mKnowledge Create (0.4ms)[0m   [0mINSERT INTO `knowledges` (`nr_of_correct_answers`, `updated_at`, `time_for_last_correct_answer`, `query_id`, `nr_of_answers`, `user_id`, `created_at`) VALUES(0, '2009-06-20 11:09:04', NULL, NULL, 0, NULL, '2009-06-20 11:09:04')[0m
+  [4;36;1mSQL (5.7ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mLanguage Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `languages`[0m
+  [4;35;1mLanguage Exists (0.2ms)[0m   [0mSELECT `languages`.id FROM `languages` WHERE (`languages`.`own_name` IS NULL) LIMIT 1[0m
+  [4;36;1mLanguage Exists (0.1ms)[0m   [0;1mSELECT `languages`.id FROM `languages` WHERE (`languages`.`english_name` IS NULL) LIMIT 1[0m
+  [4;35;1mLanguage Exists (0.2ms)[0m   [0mSELECT `languages`.id FROM `languages` WHERE (`languages`.`own_name` = BINARY 'Svenska') LIMIT 1[0m
+  [4;36;1mLanguage Exists (0.1ms)[0m   [0;1mSELECT `languages`.id FROM `languages` WHERE (`languages`.`english_name` IS NULL) LIMIT 1[0m
+  [4;35;1mLanguage Exists (0.1ms)[0m   [0mSELECT `languages`.id FROM `languages` WHERE (`languages`.`own_name` IS NULL) LIMIT 1[0m
+  [4;36;1mLanguage Exists (0.2ms)[0m   [0;1mSELECT `languages`.id FROM `languages` WHERE (`languages`.`english_name` = BINARY 'Swedish') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLanguage Exists (0.1ms)[0m   [0mSELECT `languages`.id FROM `languages` WHERE (`languages`.`own_name` = BINARY 'Svenska') LIMIT 1[0m
+  [4;36;1mLanguage Exists (0.0ms)[0m   [0;1mSELECT `languages`.id FROM `languages` WHERE (`languages`.`english_name` = BINARY 'Swedish') LIMIT 1[0m
+  [4;35;1mLanguage Create (0.2ms)[0m   [0mINSERT INTO `languages` (`own_name`, `english_name`) VALUES('Svenska', 'Swedish')[0m
+  [4;36;1mLanguage Exists (0.2ms)[0m   [0;1mSELECT `languages`.id FROM `languages` WHERE (`languages`.`own_name` = BINARY 'Svenska') LIMIT 1[0m
+  [4;35;1mLanguage Exists (0.2ms)[0m   [0mSELECT `languages`.id FROM `languages` WHERE (`languages`.`english_name` = BINARY 'Swedish') LIMIT 1[0m
+  [4;36;1mLanguage Exists (0.3ms)[0m   [0;1mSELECT `languages`.id FROM `languages` WHERE (`languages`.`own_name` = BINARY 'Svenska som andraspråk') LIMIT 1[0m
+  [4;35;1mLanguage Exists (0.1ms)[0m   [0mSELECT `languages`.id FROM `languages` WHERE (`languages`.`english_name` = BINARY 'Swedish') LIMIT 1[0m
+  [4;36;1mLanguage Exists (0.2ms)[0m   [0;1mSELECT `languages`.id FROM `languages` WHERE (`languages`.`own_name` = BINARY 'Svenska') LIMIT 1[0m
+  [4;35;1mLanguage Exists (0.2ms)[0m   [0mSELECT `languages`.id FROM `languages` WHERE (`languages`.`english_name` = BINARY 'Scandinavian') LIMIT 1[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `lessons`[0m
+  [4;35;1mLesson Exists (0.2ms)[0m   [0mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` = BINARY 'Traffic') LIMIT 1[0m
+  [4;36;1mLesson Create (0.2ms)[0m   [0;1mINSERT INTO `lessons` (`name`, `answer_lang_id`, `updated_at`, `is_private`, `user_id`, `question_lang_id`, `created_at`) VALUES('Traffic', 2, '2009-06-20 11:09:04', 0, NULL, 1, '2009-06-20 11:09:04')[0m
+  [4;35;1mLesson Exists (0.2ms)[0m   [0mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` = BINARY 'Traffic') LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Exists (0.2ms)[0m   [0;1mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` IS NULL) LIMIT 1[0m
+  [4;35;1mLesson Exists (0.1ms)[0m   [0mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` IS NULL) LIMIT 1[0m
+  [4;36;1mLesson Exists (0.1ms)[0m   [0;1mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLesson Exists (0.2ms)[0m   [0mSELECT `lessons`.id FROM `lessons` WHERE (`lessons`.`name` = BINARY 'Food and drink') LIMIT 1[0m
+  [4;36;1mLesson Create (0.2ms)[0m   [0;1mINSERT INTO `lessons` (`name`, `answer_lang_id`, `updated_at`, `is_private`, `user_id`, `question_lang_id`, `created_at`) VALUES('Food and drink', 2, '2009-06-20 11:09:04', 0, NULL, 1, '2009-06-20 11:09:04')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `queries`[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('(att) komma/återvända hem (igen)', '2009-06-20 11:09:04', NULL, NULL, 'blablabla', '2009-06-20 11:09:04')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Create (0.3ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('Häst', '2009-06-20 11:09:04', NULL, NULL, 'Horse', '2009-06-20 11:09:04')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.3ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('gå; (att) komma/återvända hem (igen)', '2009-06-20 11:09:04', NULL, NULL, 'blablabla', '2009-06-20 11:09:04')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Create (0.2ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('Jag arbetar/jobbar på universitet(et).', '2009-06-20 11:09:04', NULL, NULL, 'blablabla', '2009-06-20 11:09:04')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.3ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('天/日', '2009-06-20 11:09:04', NULL, NULL, 'blablabla', '2009-06-20 11:09:04')[0m
+  [4;35;1mQuery Create (0.2ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('时(间);时(候)', '2009-06-20 11:09:04', NULL, NULL, 'blablabla', '2009-06-20 11:09:04')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('sluta jobbet/jobba/arbetet/arbeta', '2009-06-20 11:09:04', NULL, NULL, 'blablabla', '2009-06-20 11:09:04')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Create (0.1ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('sluta (jobbet/jobba/arbetet/arbeta)', '2009-06-20 11:09:04', NULL, NULL, 'blablabla', '2009-06-20 11:09:04')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.1ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('kyckling(kött)', '2009-06-20 11:09:04', NULL, NULL, 'blablabla', '2009-06-20 11:09:04')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuery Create (0.2ms)[0m   [0mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('sluta jobbet/jobba;sluta arbetet/arbeta', '2009-06-20 11:09:04', NULL, NULL, 'blablabla', '2009-06-20 11:09:04')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuery Create (0.2ms)[0m   [0;1mINSERT INTO `queries` (`answer`, `updated_at`, `lesson_id`, `clue`, `question`, `created_at`) VALUES('gå; (att) komma/återvända hem (igen)', '2009-06-20 11:09:04', NULL, NULL, 'blablabla', '2009-06-20 11:09:04')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Exists (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6118455880.891513704960096', '2009-06-20 11:09:04', '64b9aa17f0567839e3ab14898aedd7166bf6ff0b', 5, NULL, '2009-06-20 11:09:04', NULL)[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'Unknown Guy') LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6118700280.990115447758742', '2009-06-20 11:09:04', 'cf387d866fc3c27f1ee6ea198a09d38f2875092d', 5, NULL, '2009-06-20 11:09:04', NULL)[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`name` = 'Jonas') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6118795580.74076737143078', '2009-06-20 11:09:04', 'de883320617c4a022daa7b3474b89a540deed40b', 5, NULL, '2009-06-20 11:09:04', NULL)[0m
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'Jonas') LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6118890980.556771510163064', '2009-06-20 11:09:04', '0052f26dfc1ed463749c1d2ab5dbf16d8f9423cf', 5, NULL, '2009-06-20 11:09:04', NULL)[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'New User') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6119060880.0677835436791953', '2009-06-20 11:09:04', '069dd1da82d52cc922e9151d0638d30a0e360bd3', 5, NULL, '2009-06-20 11:09:04', NULL)[0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` = BINARY 'Jonas') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`name`, `salt`, `updated_at`, `hashed_password`, `quiz_length`, `description`, `created_at`, `display_language`) VALUES('Jonas', '-6119231580.173633413369393', '2009-06-20 11:09:04', '065a7a8f3e5fa304171e2b13b1a0c1f12bc261e1', 5, NULL, '2009-06-20 11:09:04', NULL)[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`name` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m

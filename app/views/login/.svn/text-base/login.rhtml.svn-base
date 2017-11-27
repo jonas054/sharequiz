@@ -1,0 +1,22 @@
+<%= form_tag %>
+  <table align="center" border="0">
+    <tr>
+      <td align="right"><%= text(:name) %>:</td>
+      <td><%= text_field_tag :name, params[:name] %></td>
+    </tr>
+    <tr>
+      <td align="right"><%= text(:password) %>:</td>
+      <td><%= password_field_tag :password, params[:password] %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <%= submit_tag text(:log_in) %>
+        <%= text(:or) %>
+        <%= link_to text(:create_a_new_account), { :action => "add_user" } %>
+       </td>
+    </tr>
+  </table>
+<%= '</form>' %>
+
+<script language='javascript'>document.getElementById("name").focus()</script>

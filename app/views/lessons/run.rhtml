@@ -1,0 +1,92 @@
+<%
+lesson = @query.lesson
+if session[:reversed]
+  effective_question = @query.answer
+  effective_answer = @query.question
+  effective_question_lang = lesson.answer_lang
+  effective_answer_lang = lesson.question_lang
+  effective_answer_symbol = :question
+else
+  effective_question = @query.question
+  effective_answer = @query.answer
+  effective_question_lang = lesson.question_lang
+  effective_answer_lang = lesson.answer_lang
+  effective_answer_symbol = :answer
+end
+%>
+<div class="outer" align="center">
+  <p><%= progress_bar %><br /></p>
+  <table>
+    <%= render(:partial => "lesson_head", :object => lesson) %>
+    <tbody>
+      <% form_for(:query,
+                  @query,
+                  :url => { :action => "answer",
+                            :id => @query.id,
+                            :answer_index => @answer_index }) do |f2| %>
+      <tr>
+        <% if session[:reversed] -%>
+        <% @query.question = "" -%>
+        <td <%= class_for_language(lesson.answer_lang_id) %> ><%= h(@query.answer).gsub(/;/, '<br/>') %></td>
+        <% else %>
+        <% @query.answer = "" %>
+        <% if @query.question =~ /^!(.*)!$/ %>
+        <td><%= image_tag($1, :height => "80px") %></td>
+        <% else %>
+        <td <%= class_for_language(lesson.question_lang_id) %> >
+          <%= colorize(@query.question, lesson.question_lang_id).gsub(/;/, '<br/>') %>
+        </td>
+        <% end %>
+        <% end %>
+        <td>
+          <%= f2.text_field effective_answer_symbol, :autocomplete => "off",
+          :size => 20, :class => (effective_answer_lang.english_name =~ /Chinese/i) ? 'chinese' : 'answer' %>
+          <%= submit_tag text(:send) %>
+        </td>
+        <%= query_score @query %>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br/>
+  <%= link_to text(:end_quiz), :action => "end_quiz" %>
+  <br/>
+  <br/>
+  <% if has_chinese effective_answer_lang.id %>
+  <div style="width: 50%">
+        <%= button_row_for_run %>
+  </div>
+  <% end %>
+</div>
+
+<% if @wrong_answer %>
+<br/>
+<div class="correction">
+  <%= lesson_link_if_owner @last_lesson %><hr>
+  <% q_lang_id = @last_lesson.question_lang_id %>
+  <% a_lang_id = @last_lesson.answer_lang_id %>
+  <% q_lang_id, a_lang_id = a_lang_id, q_lang_id if session[:reversed] %>
+  <span <%= class_for_language(q_lang_id) %> ><%= colorize(@last_question, q_lang_id) %></span>
+  =
+  <span <%= class_for_language(a_lang_id) %> ><%= colorize(@correct_answer, a_lang_id) %></span>
+  <%= dictionary_links q_lang_id, a_lang_id, @last_question, @correct_answer %>
+  <%= "<hr>#{h(@clue)}" unless @clue.blank? %>
+  <%= "<hr>#{text(:you_answered)}: #{h(@wrong_answer)}" unless @wrong_answer.blank? %>
+</div>
+<% end %>
+
+<% if has_spanish effective_answer_lang.id %>
+<table align="center">
+  <tr>
+    <td><%= text(:copy_and_paste) %>:</td>
+    <td>&#191;</td>
+    <td>&iexcl;</td>
+    <td>&ntilde;</td>
+    <td>&Ntilde;</td>
+  </tr>
+</table>
+<% end %>
+
+<SCRIPT type="text/javascript">
+  document.getElementById("query_<%= effective_answer_symbol %>").focus()
+</SCRIPT>

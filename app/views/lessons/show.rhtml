@@ -1,0 +1,41 @@
+<p>
+  <b>
+    <%=h @lesson.name %>
+  </b>
+</p>
+
+<table class="print">
+  <tr>
+    <th align="left">
+      <% question_language = Language.find(@lesson.question_lang_id) %>
+      <%= question_language.own_name %>
+    </th>
+
+    <% if question_language.english_name == "Chinese" %>
+    <th align="left">Pinyin</th>
+    <% end %>
+
+    <th align="left">
+      <%= Language.find(@lesson.answer_lang_id).own_name %>
+    </th>
+
+    <% if question_language.english_name != "Chinese" %>
+    <th align="left"><%= text(:clue) %></th>
+    <% end %>
+  </tr>
+  <% for query in @lesson.queries %>
+  <tr>
+    <td><%= query.question %></td>
+
+    <% if question_language.english_name == "Chinese" %>
+    <td><%= query.clue %></td>
+    <% end %>
+
+    <td><%= query.answer %></td>
+
+    <% if question_language.english_name != "Chinese" %>
+    <td><%= query.clue %></td>
+    <% end %>
+  </tr>
+  <% end %>
+</table>

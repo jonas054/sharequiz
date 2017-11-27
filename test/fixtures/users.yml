@@ -1,0 +1,10 @@
+<% SALT = "NaCl" unless defined?(SALT) %>
+
+jonas:
+   name: jonas
+   salt: <%= SALT %>
+   hashed_password: <%= User.encrypted_password('secret' , SALT) %>
+
+bertil:
+   name: bertil
+   salt: MgCl

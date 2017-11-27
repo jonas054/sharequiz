@@ -1,0 +1,68 @@
+8
+
+dir
+2
+file:///home/jonas/Subversion/NetBeans_repo/app/views/login
+file:///home/jonas/Subversion/NetBeans_repo
+
+
+
+2009-02-06T20:31:05.490196Z
+2
+jonas
+
+
+svn:special svn:externals svn:needs-lock
+
+preferences.rhtml
+file
+
+
+
+
+2009-02-03T10:28:30.000000Z
+e2e0b99b73238427ccf40f518e7b2217
+2009-02-06T20:31:05.490196Z
+2
+jonas
+has-props
+
+add_user.rhtml
+file
+
+
+
+
+2009-02-03T10:28:30.000000Z
+997e1f4e5146720b3a02cf766fbe17ec
+2009-02-06T20:31:05.490196Z
+2
+jonas
+has-props
+
+index.rhtml
+file
+
+
+
+
+2009-02-03T10:28:30.000000Z
+0bf84c028aeb429b6567142885beb600
+2009-02-06T20:31:05.490196Z
+2
+jonas
+has-props
+
+login.rhtml
+file
+
+
+
+
+2009-02-03T10:28:30.000000Z
+bcc008e6335ce4303ba670bb62001e90
+2009-02-06T20:31:05.490196Z
+2
+jonas
+has-props
+

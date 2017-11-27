@@ -1,0 +1,21 @@
+<thead>
+  <tr>
+    <th colspan="4" class="lesson_name"><%= text(:lesson_name) %>
+      <%= lesson_head_form.text_field :name %>
+    </th>
+  </tr>
+  <tr>
+    <th></th>
+    <th>
+      <%= image_tag "32x32_filetypes.png", :title => text(:question) %>
+      <%= lesson_head_form.select :question_lang_id, @languages, :prompt => text(:select_a_language) %>
+    </th>
+    <th>
+      <%= image_tag "32x32_gaim.png", :title => text(:answer) %>
+      <%= lesson_head_form.select :answer_lang_id, @languages, :prompt => text(:select_a_language) %>
+    </th>
+    <th>
+      <%= text(:clue) %>
+    </th>
+  </tr>
+</thead>

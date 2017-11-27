@@ -1,0 +1,32 @@
+<table>
+   <tr>
+     <th><%= heading_with_sorting :lesson, "name" %></th>
+     <th><%= heading_with_sorting :languages, "language" %></th>
+     <th><%= heading_with_sorting :created_by, "creator" %></th>
+     <th><%= text(:entries) %></th>
+     <% if session[:user_id] %>
+       <th><%= text(:my_score) %></th>
+     <% end %>
+   </tr>
+  <% for lesson in @page_lessons do %>
+    <tr>
+      <td>
+        <% if lesson.user_id == session[:user_id] %>
+          <%= link_to lesson.name, { :action => 'edit', :id => lesson.id }, :title => text(:edit) %>
+        <% else %>
+          <%= link_to lesson.name, { :action => 'show', :id => lesson.id }, :title => text(:show) %>
+        <% end %>
+      </td>
+      <td><%= h lesson.question_lang.own_name %> + <%= h lesson.answer_lang.own_name %></td>
+      <td><%= h lesson.user.name %></td>
+      <td align="right"><%= lesson.queries.size %></td>
+      <%= lesson_score lesson %>
+    </tr>
+  <% end %>
+  <% if @page_lessons.empty? -%>
+    <tr><td><h2> <%= text(:no_lessons) %> </h2></td></tr>
+  <% end -%>
+</table>
+<br/>
+<% page_links = will_paginate(@page_lessons, {}) || '' %>
+<%= page_links.sub('Previous', text(:previous)).sub('Next', text(:next)) %>

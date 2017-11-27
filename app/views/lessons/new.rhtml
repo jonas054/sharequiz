@@ -1,0 +1,15 @@
+<h1 align="center"><%= text(:new_lesson) %></h1>
+
+<%= error_messages_for :lesson %>
+
+<% form_for(:lesson, @lesson, :url => { :action => "create" }) do |f| %>
+  <table align="center">
+    <%= render :partial => 'lesson_head_form', :object => f %>
+  </table>
+
+  <p align="center">
+    <%= submit_tag text(:create) %>
+  </p>
+<% end %>
+
+<SCRIPT type="text/javascript">document.getElementById("lesson_name").focus()</SCRIPT>

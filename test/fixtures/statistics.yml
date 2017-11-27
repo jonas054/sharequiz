@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user: bertil
+  language: eng
+  wordcount: 1
+
+two:
+  user: bertil
+  language: chi
+  wordcount: 567

@@ -1,0 +1,223 @@
+body {
+    background-color: #ddf; color: #333;
+}
+
+body, p, ol, ul, td {
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size:   13px;
+    line-height: 18px;
+}
+
+pre {
+    background-color: #eee;
+    padding: 10px;
+    font-size: 11px;
+}
+
+a {
+    color: #000;
+}
+
+a:visited {
+    color: #666;
+}
+
+a:hover {
+}
+
+a.functions {
+    color: #000; display: block;
+    background-color: #eee;
+    text-decoration: none;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+
+    margin: 5px;
+    padding: 6px;
+}
+
+a.functions:hover {
+    background-color: #ffffbb;
+}
+
+a.functions span { padding: 7px; }
+
+.progress td {
+    padding: 10px;
+}
+
+div.pagination a {
+    border: 1px solid gray;
+    padding: 5px;
+    background-color: #eee;
+    text-decoration: none
+}
+
+div.pagination a:hover {
+    background-color: #ffffbb;
+}
+
+.disabled {
+    color: #ddd;
+}
+
+.tone1 {
+    color: #f00;
+}
+
+.tone2 {
+    color: #D89000;
+}
+
+.tone3 {
+    color: #0b0;
+}
+
+.tone4 {
+    color: #00f;
+}
+
+.tone5 {
+    color: #888;
+}
+
+div.pagination .current {
+    padding: 5px;
+}
+
+#main-help {
+    margin-left: 25%;
+    margin-right: 25%;
+    padding: 20px;
+}
+
+.outer {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.lesson_name {
+    background-color: #d5d5f4;
+    border-style: solid;
+}
+
+.correction {
+    top: 10mm;
+    float: left;
+    background-color: white;
+    padding: 10px;
+    border-style: solid;
+    border-color: red;
+}
+
+.guide {
+    top: 10mm;
+    float: left;
+    background-color: white;
+    padding: 10px;
+    border-style: solid;
+    border-color: blue;
+}
+
+span.example-entry {
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    padding: 1px;
+}
+
+.chinese {
+    font-family: SimHei;
+    font-size: 28px;
+    line-height: 28px;
+}
+
+.chinese a         { text-decoration: none; color: #007; }
+.chinese a:hover   { background-color: #ffc; }
+
+.answer {
+    font-size: 24px;
+    padding: 5px;
+}
+
+th {
+    padding: 5px;
+    background-color: #eef;
+}
+
+tr.odd td {
+    padding: 3px;
+    background-color: #eef;
+}
+
+td {
+    padding: 1px 10px 1px 1px;
+    vertical-align: middle;
+    border-width: 0px;
+    border-style: solid;
+}
+
+tr.even td {
+    padding: 3px;
+    background-color: #fff;
+}
+
+.copy td {
+    background-color: #ffa;
+    padding: 3px;
+}
+
+td.goal {
+    background-color: #cfc;
+}
+
+.navigation {
+    float: left;
+    margin-right: 5mm;
+}
+
+.chart {
+    margin-left: 10mm;
+    border-style: solid;
+    border-width: 1px;
+    padding: 10px;
+    background-color: white;
+}
+
+.lesson-list {
+    float: left;
+    background-color: #fff;
+    border-right-style: solid;
+    border-right-width: 4px;
+    border-right-color: #eef;
+    border-left-style: solid;
+    border-left-width: 4px;
+    border-left-color: #aaf;
+    padding: 20px;
+    margin-right: 5mm;
+    margin-bottom: 5mm;
+}
+
+.lesson-list td {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.description {
+    margin-left: 10mm;
+    right: 1px;
+}
+
+#banner {
+    font-size: XX-large;
+    padding: 10px;
+    text-align: center;
+}

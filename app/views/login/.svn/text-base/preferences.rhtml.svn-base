@@ -1,0 +1,27 @@
+<h3 align="center"><%= text(:settings) %></h2>
+<% form_for(:user, @user, :url => { :action => "new_preferences", :id => @user.id }) do |user| %>
+  <table align="center">
+    <tr>
+      <td>
+        <%= text(:menu_language) %>
+      </td>
+      <td>
+        <%= user.select :display_language, [["English", "English"], ["Svenska", "Swedish"]], :prompt => text(:select_a_language) %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= text(:number_of_questions_per_quiz) %>
+      </td>
+      <td>
+        <%= user.text_field :quiz_length, :size => 3 %>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <%= submit_tag text(:save_preferences) %>
+      </td>
+    </tr>
+  </table>
+<% end %>

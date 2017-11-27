@@ -1,0 +1,29 @@
+<br /> <!-- Needed for IE. Letters are cut otherwise. -->
+
+<table class="outer">
+  <tr>
+    <td class="navigation">
+      <table>
+      </table>
+    </td>
+    <td>
+
+<h1 align="center">
+  <%= "#{text(:import)} #{text(:entries)} #{text(:from)} CSV" %>
+</h1>
+
+<%= error_messages_for :lesson %>
+
+<% form_for(:lesson, @lesson, :url => { :action => "import", :id => @lesson.id }) do |f| %>
+  <p align="center">
+    <%= text_area :csv, :text, :cols => 100 %>
+    <br />
+    <br />
+    <%= submit_tag "#{text(:import)} #{text(:to)} '#{@lesson.name}'" %>
+  </p>
+<% end %>
+
+  </td>
+</table>
+
+<SCRIPT type="text/javascript">document.getElementById("csv_text").focus()</SCRIPT>

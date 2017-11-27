@@ -1,0 +1,15 @@
+<thead>
+  <tr>
+    <th>
+      <%= image_tag "32x32_filetypes.png", :title => "" %>
+      <%= lesson_head.effective_question_lang(session[:reversed]).own_name %>
+    </th>
+    <th>
+      <%= image_tag "32x32_gaim.png", :title => "" %>
+      <%= lesson_head.effective_answer_lang(session[:reversed]).own_name %>
+    </th>
+    <% if session[:user_id] %>
+      <th><%= image_tag "32x32_kcalc.png", :title => "" %><%= raw text(:my_score) %></th>
+    <% end %>
+  </tr>
+</thead>

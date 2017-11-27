@@ -1,0 +1,20 @@
+Alternativ favicon:
+
+
+    0 1 2 3 4 5 6 7 8 9101112131415
+ 0
+ 1   MMMM  MM             
+ 2 MM      MM    MMMM    MMMM  MMMM
+ 3 MMMMMM  MMMM      MM  MM  MM  MM
+ 4     MM  MM  MM  MMMM  MM  MMMMMM
+ 5     MM  MM  MMMM  MM  MM  MM
+ 6 MMMM    MM  MM  MMMM  MM    MMMM
+ 7
+ 8     MM              
+ 9   MM  MM    MM  MM  MM  MMMMMM
+10   MM  MM    MM  MM          MM
+11   MM  MM    MM  MM  MM    MM
+12   MM  MM    MM  MM  MM  MM
+13     MMMMMM    MMMM  MM  MMMMMM
+14
+15

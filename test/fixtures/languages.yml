@@ -1,0 +1,30 @@
+eng:
+   id: 1
+   english_name: English
+   own_name: English
+
+swe:
+   id: 2
+   english_name: Swedish
+   own_name: Svenska
+
+fre:
+   id: 3
+   english_name: French
+   own_name: Francais
+
+ger:
+   id: 4
+   english_name: German
+   own_name: Deutsch
+
+dan:
+   id: 5
+   english_name: Danish
+   own_name: Dansk
+
+chi:
+   id: 6
+   english_name: Chinese
+   own_name: 中文
+

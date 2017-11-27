@@ -1,0 +1,38 @@
+Kolla och checka in ändringar
+
+  git-gui &
+
+Kolla skillnader mot incheckade filer
+
+  git diff -w --color
+  diffsum
+
+Deploya applikationen till webben
+
+  git push heroku
+
+Överför databas från webben till lokal maskin
+
+  heroku db:pull mysql://root@localhost/sharequiz_development
+
+Överför databas från lokal maskin till webben
+
+  heroku db:push mysql://root@localhost/sharequiz_development
+
+Kör enskilda migrationer lokalt
+
+  rake db:migrate:down VERSION=20090620122424
+  rake db:migrate:up VERSION=20090620122424
+
+Kör enskilda migrationer på webben
+
+  heroku rake db:migrate:down VERSION=20090620122424
+  heroku rake db:migrate:up VERSION=20090620122424
+
+Profilering
+
+  ruby-prof -p graph_html -f /tmp/prof.html script/server
+
+Övrigt
+  
+  heroku console

@@ -1,0 +1,24 @@
+<% form_for :user do |form| %>
+  <table align="center" border="0">
+    <tr>
+      <td align="right"><%= text(:login_name) %>:</td>
+      <td><%= form.text_field :name, :size => 40 %></td>
+    </tr>
+    <tr>
+      <td align="right"><%= text(:choose_a_password) %>:</td>
+      <td><%= form.password_field :password, :size => 40 %></td>
+    </tr>
+    <tr>
+      <td align="right"><%= text(:confirm_password) %>:</td>
+      <td><%= form.password_field :password_confirmation, :size => 40 %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><%= submit_tag text(:create_account), :class => "submit" %></td>
+    </tr>
+  </table>
+<% end %>
+
+<%= error_messages_for 'user' %>
+
+<script language='javascript'>document.getElementById("user_name").focus()</script>

@@ -1,0 +1,18 @@
+one:
+  name: My test lesson
+  question_lang_id: 6
+  answer_lang_id: 2
+  user: jonas
+
+two:
+  name: My seconds test lesson
+  question_lang_id: 3
+  answer_lang_id: 2
+  user: jonas
+
+three:
+  name: Another test lesson
+  question_lang_id: 4
+  answer_lang_id: 5
+  user: bertil
+

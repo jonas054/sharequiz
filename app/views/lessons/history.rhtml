@@ -1,0 +1,33 @@
+<% @history.each do |stats| %>
+<% if stats.size > 1 %>
+<table align="center">
+  <tr>
+    <td>
+      <h1><%= Language.find(stats[0].language_id).own_name %></h1>
+      <table>
+        <tr>
+          <th><%= text(:wordcount) %></th>
+          <th><%= text(:time_ago) %></th>
+        </tr>
+
+        <% now = Time.now.to_i %>
+        <% xcoord = [] %>
+        <% ycoord = [] %>
+        <% ymax = stats.sort_by { |s| s.wordcount }.last.wordcount %>
+        <% for statistic in stats %>
+        <tr>
+          <%= tds(statistic, ymax) %>
+        </tr>
+        <% xcoord << now - statistic.created_at.to_i %>
+        <% ycoord << statistic.wordcount %>
+        <% end %>
+      </table>
+    </td>
+    <td>
+      <%= history_graph xcoord, ycoord %>
+    </td>
+  </tr>
+</table>
+<hr/>
+<% end %>
+<% end %>

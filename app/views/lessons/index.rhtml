@@ -1,0 +1,93 @@
+<div class="outer">
+    <div class="navigation">
+      <%= button_row_for_index %>
+      <br/>
+      <fieldset>
+        <legend>Filter</legend>
+        <table>
+          <tr>
+            <td>
+              <b><%= text(:language) %>:</b>
+            </td>
+            <td>
+              <% [@lang1, @lang2].compact.each_with_index do |lang,ix| -%>
+              <%= remove_filter(ix == 1 ? :lang2 : :lang1) %>
+              <%= h lang.own_name %>
+              <% end -%>
+              <% unless @lang2 or @page_lessons.size == 1 -%>
+              <%= form_tag({:action => 'add_filter'}, {:name => "langform"}) %>
+              <%= language_form text(@lang1 ? :select_a_second_language : :select_a_language) %>
+              <%= '</form>' %>
+              <% end -%>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <b><%= text(:created_by) %>:</b>
+            </td>
+            <td>
+              <% if @created_by %>
+              <%= remove_filter :created_by %>
+              <%= h @created_by.name %>
+              <% else %>
+              <%= form_tag({:action => 'add_filter'}, {:name => "creatorform"}) %>
+              <%= select('filter', 'created_by', User.lesson_owners,
+              { :prompt => text(:select_a_user) },
+              { :onchange => 'creatorform.submit()' }) %>
+              <%= '</form>' %>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <b><%= text(:title_matching) %>:</b>
+            </td>
+            <td>
+              <% if @title_match %>
+              <%=  remove_filter :title_match %>
+              <%=  h @title_match %>
+              <% elsif @page_lessons.size > 1 %>
+              <%=  form_tag({:action => 'add_filter'}, {:name => "titleform"}) %>
+              <%=  text_field_tag :title_match, @title_match, :size => 15 %>
+              <%=  submit_tag text(:search) %>
+              <%=  '</form>' %>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <%= text(:selected) + ' ' + text(:entries).downcase %>
+            </td>
+            <td>
+              <%= Query.count_for @selected_lessons %> / <%= Query.count %>
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+    </div>
+
+    <div class="lesson-list">
+      <%= render :partial => "lessons", :object => @page_lessons %>
+    </div>
+
+    <div>
+      <% unless @statistics.empty? %>
+      <h3><%= text(:result_for) + ', ' + h(@statistics.first.user.name) %></h3>
+      <table>
+        <tr>
+          <th><%= text(:language) %></th>
+          <th><%= text(:wordcount) %></th>
+        </tr>
+
+        <% for statistic in @statistics %>
+        <tr>
+          <td><%= statistic.language.own_name %></td>
+          <td align="right"><%=h statistic.wordcount %></td>
+        </tr>
+        <% end %>
+      </table>
+      <% end %>
+    </div>
+</div>
+
+<script type="text/javascript">document.getElementById("title_match").focus()</script>

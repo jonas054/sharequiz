@@ -1,0 +1,91 @@
+require 'test_helper'
+
+class QueryTest < ActiveSupport::TestCase
+  test 'ok query' do
+    Query.create! :question => 'Horse', :answer => 'Häst'
+  end
+
+  test 'query with no data' do
+    query = Query.new
+    [:question, :answer].each { |sym|
+      check_save_error query, sym, "can't be blank"
+    }
+  end
+
+  test 'possible1' do
+    check_possible(Query.create!(:question => 'blablabla',
+                                 :answer => 'gå; (att) komma/återvända hem (igen)'),
+                   'gå',
+                   'att komma hem igen',
+                   'att komma hem',
+                   'att återvända hem igen',
+                   'att återvända hem',
+                   'komma hem igen',
+                   'komma hem',
+                   'återvända hem igen',
+                   'återvända hem')
+  end
+
+  test 'possible2' do
+    check_possible(Query.create!(:question => 'blablabla',
+                                 :answer => 'Jag arbetar/jobbar på universitet(et).'),
+                   'Jag arbetar på universitetet.',
+                   'Jag arbetar på universitet.',
+                   'Jag jobbar på universitetet.',
+                   'Jag jobbar på universitet.')
+  end
+
+  test 'possible slashes and semicolon' do
+    check_possible(Query.create!(:question => 'blablabla',
+                                 :answer => 'sluta jobbet/jobba;sluta arbetet/arbeta'),
+                   'sluta jobbet',
+                   'sluta jobba',
+                   'sluta arbetet',
+                   'sluta arbeta')
+  end
+
+  test 'possible more than 2 alt' do
+    check_possible(Query.create!(:question => 'blablabla',
+                                 :answer => 'sluta jobbet/jobba/arbetet/arbeta'),
+                   'sluta jobbet',
+                   'sluta jobba',
+                   'sluta arbetet',
+                   'sluta arbeta')
+  end
+
+  test 'possible more than 2 alt within paren' do
+    check_possible(Query.create!(:question => 'blablabla',
+                                 :answer => 'sluta (jobbet/jobba/arbetet/arbeta)'),
+                   'sluta jobbet',
+                   'sluta jobba',
+                   'sluta arbetet',
+                   'sluta arbeta',
+                   'sluta')
+  end
+
+  test 'possible paren within word' do
+    check_possible(Query.create!(:question => 'blablabla', :answer => 'kyckling(kött)'),
+                   'kycklingkött',
+                   'kyckling')
+  end
+
+  test 'answer checking' do
+    query = Query.create!(:question => 'blablabla',
+                          :answer => '(att) komma/återvända hem (igen)')
+    check_possible(query,
+                   'att komma hem igen',
+                   'att komma hem',
+                   'att återvända hem igen',
+                   'att återvända hem',
+                   'komma hem igen',
+                   'komma hem',
+                   'återvända hem igen',
+                   'återvända hem')
+    ['att', 'igen'].each { |word| assert !query.answer_ok?(word, false) }
+  end
+
+  def check_possible(query, *expected)
+    assert_equal expected.sort, query.possible(query.answer).sort
+    expected.each { |s| assert query.answer_ok?(s, false) }
+  end
+end

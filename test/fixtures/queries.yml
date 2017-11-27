@@ -1,0 +1,10 @@
+shoe_sko:
+  question: sko
+  answer: shoe
+  clue: foot glove
+  lesson: one
+
+maison_hus:
+  question: maison
+  answer: hus
+  lesson: two

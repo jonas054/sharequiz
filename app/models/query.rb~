@@ -1,0 +1,72 @@
+class Query < ActiveRecord::Base
+  belongs_to :lesson
+  
+  validates_presence_of :question, :answer
+  
+  # Returns the Knowledge object associated with this query and the given user.
+  def knowledge(user_id)
+    Knowledge.find(:first,
+                   :conditions => "user_id = #{user_id} and query_id = #{id}") or
+      Knowledge.create :query_id => id, :user_id => user_id
+  end
+  
+  def has_same_languages_as(q2)
+    lesson.question_lang_id == q2.lesson.question_lang_id and
+      lesson.answer_lang_id == q2.lesson.answer_lang_id
+  end
+  
+  def answer_ok?(ans, is_reversed)
+    return false if ans.nil?
+    field_to_check = if is_reversed then question else answer end
+    possible(field_to_check).include? ans.strip
+  end
+
+  def possible(effective_answer, combos = nil)
+    if combos == nil
+      all = effective_answer.split(/\s*;\s*/).map { |ans|
+        possible nil, combinations(ans)
+      }
+      return all.flatten
+    end
+    return [combos[:text]] if combos[:children].empty?
+    result = []
+    combos[:children].each { |kid|
+      possible(nil, kid).each { |poss| result << (combos[:text] + " " + poss) }
+    }
+    result.map { |s| s.gsub(/  +/, ' ').gsub(/ ([.,?])/, '\1').strip }
+  end
+  
+  def combinations(rem = answer)
+    attach :text => "", :remainder => rem
+  end
+
+  def to_s
+    "#{question} / #{answer}"
+  end
+  
+  def attach(node)
+    case node[:remainder]
+    when %r"^\s*([^\(\)/]*)\(([^\(\)]*)\)(.*)" # (word1[/word2])
+      node[:children] = [divide($1, $2, $3), {:text => $1, :remainder => $3}]
+    when %r"^\s*(([^\(\s]+/)+(\S+))(.*)" # word1/word2
+      rem = $4
+      node[:children] = $1.split(%r"/").map { |w| {:text => w, :remainder => rem} }
+    when /^\s*(\S+)(.*)/
+      node[:children] = [{:text => $1, :remainder => $2}]
+    when ''
+      node[:children] = []
+    else
+      raise "Could not parse '#{node[:remainder]}'"
+    end
+    node[:children].each { |child| attach child }
+    node
+  end
+
+  def divide(pre,t,r)
+    if t =~ %r"/"
+      { :text => pre, :remainder => t+r }
+    else
+      { :text => pre+t, :remainder => r }
+    end
+  end
+end
